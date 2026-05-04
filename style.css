@@ -1,0 +1,134 @@
+/* --- GLOBAL VARIABLES & RESET --- */
+:root {
+    --burgundy: #800020;
+    --burgundy-hover: #5a0016;
+    --dark-stone: #1a1a1d;
+    --parchment: #FBF5DF;
+    --text-light: #e0e0e0;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-stone);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(26, 26, 29, 0.95);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--parchment);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--parchment);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    /* This creates a very subtle vignette/shadow effect */
+    background: radial-gradient(circle, rgba(45,45,48,1) 0%, rgba(26,26,29,1) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    color: var(--parchment);
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* --- BUTTONS --- */
+.btn-primary, .btn-primary-small {
+    background-color: var(--burgundy);
+    color: var(--parchment);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-small {
+    padding: 8px 20px;
+}
+
+.btn-primary:hover, .btn-primary-small:hover {
+    background-color: var(--burgundy-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--parchment);
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--parchment);
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--parchment);
+    color: var(--dark-stone);
+}

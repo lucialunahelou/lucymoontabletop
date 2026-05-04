@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucy Moon | Professional Dungeon Master</title>
-    <style>
-        body {
-            /* The subtle dark stone background */
-            background-color: #1a1a1d; 
-            color: #FBF5DF; /* Parchment text */
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #800020; /* Deep Burgundy */
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .card {
-            background-color: #2d2d30;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-    </style>
+    
+    <!-- Importing our Museum Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Linking the CSS file we are about to create -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card">
-        <h1>Welcome to the Campaign</h1>
-        <p>This is the beginning of my professional Dungeon Master portfolio.</p>
-        <p>Currently under construction.</p>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">LUCY MOON</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#corporate">Corporate Solutions</a></li>
+            <li><a href="#contact" class="btn-primary-small">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Elevating Tabletop Narratives.</h1>
+            <p class="subtitle">Professional Dungeon Master | Immersive Campaigns & Bespoke Corporate Team Building.</p>
+            <div class="hero-buttons">
+                <a href="#campaigns" class="btn-primary">Join a Campaign</a>
+                <a href="#corporate" class="btn-secondary">Request Corporate Proposal</a>
+            </div>
+        </div>
+    </header>
 
 </body>
 </html>
