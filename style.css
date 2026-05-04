@@ -217,3 +217,107 @@ body {
     text-align: center;
     width: 100%;
 }
+
+/* --- ABOUT / CV SECTION --- */
+.about-section {
+    padding: 80px 20px;
+    background-color: rgba(15, 15, 17, 1); /* Slightly darker than main background for contrast */
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cv-highlights {
+    margin-top: 40px;
+    text-align: left;
+    background-color: var(--parchment);
+    color: var(--dark-stone);
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 8px solid var(--burgundy);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cv-highlights p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonials-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: transparent;
+    border: 1px solid rgba(251, 245, 223, 0.2); /* Faint parchment border */
+    padding: 40px 30px;
+    border-radius: 6px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.testimonial-card:hover {
+    border-color: var(--burgundy);
+}
+
+.quote {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--parchment);
+    margin-bottom: 25px;
+}
+
+.author {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    letter-spacing: 1px;
+}
+
+/* --- CORPORATE SECTION --- */
+.corporate-section {
+    padding: 80px 20px 120px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.corporate-card {
+    background-color: var(--parchment);
+    color: var(--dark-stone);
+    padding: 60px 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 8px solid var(--burgundy);
+}
+
+.corporate-title {
+    font-family: var(--font-heading);
+    color: var(--burgundy);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.corporate-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.corporate-card p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
