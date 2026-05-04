@@ -49,7 +49,10 @@
                     <h3>The Curse of Strahd</h3>
                     <span class="badge">Weekly</span>
                 </div>
-                <p class="card-details"><strong>Time:</strong> Tuesdays, 11:00 AM GMT+1</p>
+                <p class="card-details">
+                    <strong>Time:</strong>
+                    <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
+                </p>
                 <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
                 <p class="card-price">€30 / session</p>
                 <!-- We will replace the # with your Stripe link later -->
@@ -62,7 +65,10 @@
                     <h3>Dragon of Icespire Peak</h3>
                     <span class="badge">Weekly</span>
                 </div>
-                <p class="card-details"><strong>Time:</strong> Thursdays, 8:00 PM CET</p>
+                <p class="card-details">
+                    <strong>Time:</strong>
+                    <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
+                </p>
                 <p class="card-details"><strong>Seats:</strong> 5/6 Filled</p>
                 <p class="card-price">€20 / session</p>
                 <a href="#" class="btn-primary-small full-width">Subscribe & Book</a>
@@ -74,7 +80,10 @@
                     <h3>Goblin Heist</h3>
                     <span class="badge one-shot">One-Shot</span>
                 </div>
-                <p class="card-details"><strong>Date:</strong> May 15th, 8:00 PM CET</p>
+                <p class="card-details">
+                    <strong>Date:</strong>
+                    <span class="local-time" data-time="2026-05-15T18:00:00Z" data-format="date">May 15th, 8:00 PM CEST</span>
+                </p>
                 <p class="card-details"><strong>Seats:</strong> 2/5 Filled</p>
                 <p class="card-price">€25 Total</p>
                 <a href="#" class="btn-primary-small full-width">Book Seat</a>
@@ -124,5 +133,36 @@
         </div>
     </section>
 
+
+<!-- Timezone Conversion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeElements = document.querySelectorAll('.local-time');
+            
+            timeElements.forEach(el => {
+                const dateString = el.getAttribute('data-time');
+                const formatType = el.getAttribute('data-format'); 
+                const dateObj = new Date(dateString);
+
+                let options = {};
+                
+                if (formatType === 'weekly') {
+                    // Output example: "Tuesday, 1:00 PM EDT"
+                    options = { weekday: 'long', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+                } else {
+                    // Output example: "May 15, 2:00 PM EDT"
+                    options = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+                }
+
+                // Format based on the user's specific browser settings
+                const localTimeString = new Intl.DateTimeFormat(navigator.language, options).format(dateObj);
+                
+                // Replace the hardcoded text with the localized text
+                el.innerText = localTimeString;
+            });
+        });
+    </script>
+</body>
+    
 </body>
 </html>
