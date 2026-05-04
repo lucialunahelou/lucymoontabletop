@@ -132,3 +132,88 @@ body {
     background-color: var(--parchment);
     color: var(--dark-stone);
 }
+
+/* --- CAMPAIGNS SECTION --- */
+.campaign-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--parchment);
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* This creates the automatic responsive grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.campaign-card {
+    background-color: var(--parchment);
+    color: var(--dark-stone);
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Subtle lift effect when hovering over a game card */
+.campaign-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.card-header h3 {
+    font-family: var(--font-heading);
+    color: var(--burgundy);
+    font-size: 1.4rem;
+}
+
+.badge {
+    background-color: var(--dark-stone);
+    color: var(--parchment);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.badge.one-shot {
+    background-color: var(--burgundy);
+}
+
+.card-details {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.full-width {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
