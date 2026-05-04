@@ -321,3 +321,64 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+
+
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    /* Stack the navigation bar */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Fix the Hero Overlap */
+    .hero {
+        height: auto; /* Removes the height restriction */
+        min-height: 80vh;
+        padding: 120px 20px 80px 20px; /* Gives it breathing room */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Shrinks the massive text */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Stack the Hero Buttons */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Makes buttons full width on mobile */
+        margin-left: 0; /* Removes the desktop spacing */
+        text-align: center;
+    }
+
+    /* Shrink the massive titles and padding */
+    .section-title, .corporate-title {
+        font-size: 2rem;
+    }
+
+    .corporate-card {
+        padding: 40px 20px;
+    }
+}
