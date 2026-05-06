@@ -92,26 +92,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- HERO SECTION --- */
 .hero {
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-    /* This creates a very subtle vignette/shadow effect */
-    background: radial-gradient(circle, rgba(45,45,48,1) 0%, rgba(26,26,29,1) 100%);
+    justify-content: space-between;
+    padding: 40px 10%;
+    /* Subtle burgundy glow behind the text fading into the dark charcoal */
+    background: radial-gradient(circle at 30% 50%, rgba(74, 14, 23, 0.4) 0%, rgba(26, 21, 21, 1) 70%);
+    gap: 40px;
 }
 
 .hero-content {
-    max-width: 800px;
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
 }
 
 .hero h1 {
-    font-family: var(--font-heading);
-    color: var(--parchment);
-    font-size: 4rem;
+    font-size: 3.8rem;
     line-height: 1.1;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .subtitle {
@@ -121,44 +122,76 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Brought over from your reference file */
+.hero-img-container {
+    position: relative;
+    display: inline-block;
+    border: 3px solid var(--gold); /* Framed in gold */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 400px; /* Keeps the portrait from overwhelming the screen */
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-img-container:hover .hero-img {
+    transform: scale(1.05); /* Subtle zoom effect when hovered */
+}
+
 /* --- BUTTONS --- */
-.btn-primary, .btn-primary-small {
+.btn-primary {
     background-color: var(--burgundy);
-    color: var(--parchment);
+    color: var(--text-light);
     text-decoration: none;
     padding: 15px 30px;
     border-radius: 4px;
-    font-weight: 600;
+    font-family: var(--font-heading); /* Giving buttons a fantasy feel */
+    font-weight: 700;
     text-transform: uppercase;
-    transition: background-color 0.3s;
-    border: none;
-    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border: 1px solid var(--burgundy);
+    display: inline-block;
 }
 
-.btn-primary-small {
-    padding: 8px 20px;
-}
-
-.btn-primary:hover, .btn-primary-small:hover {
+.btn-primary:hover {
     background-color: var(--burgundy-hover);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--parchment);
+    color: var(--gold);
     text-decoration: none;
-    padding: 14px 30px;
+    padding: 15px 30px;
     border-radius: 4px;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-weight: 700;
     text-transform: uppercase;
-    border: 1px solid var(--parchment);
+    letter-spacing: 1px;
+    border: 1px solid var(--gold);
     margin-left: 15px;
     transition: all 0.3s;
+    display: inline-block;
 }
 
 .btn-secondary:hover {
-    background-color: var(--parchment);
-    color: var(--dark-stone);
+    background-color: var(--gold);
+    color: var(--bg-dark);
 }
 
 /* --- CAMPAIGNS SECTION --- */
@@ -370,11 +403,16 @@ h1, h2, h3, h4, h5, h6 {
         gap: 15px;
     }
 
-    /* Fix the Hero Overlap */
+    /* Fix the Hero Layout (Updated for Castle Image) */
     .hero {
-        height: auto; /* Removes the height restriction */
-        min-height: 80vh;
-        padding: 120px 20px 80px 20px; /* Gives it breathing room */
+        flex-direction: column; /* Stacks text on top of the image */
+        text-align: center;
+        padding: 100px 20px 60px 20px;
+        gap: 50px; /* Creates breathing room between the buttons and your photo */
+    }
+
+    .hero-content {
+        text-align: center; /* Centers the newly aligned text */
     }
 
     .hero h1 {
