@@ -280,33 +280,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* --- ABOUT / CV SECTION --- */
-.about-section {
-    padding: 80px 20px;
-    background-color: rgba(15, 15, 17, 1); /* Slightly darker than main background for contrast */
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.cv-highlights {
-    margin-top: 40px;
-    text-align: left;
-    background-color: var(--parchment);
-    color: var(--dark-stone);
-    padding: 30px;
-    border-radius: 6px;
-    border-left: 8px solid var(--burgundy);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.cv-highlights p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
 
 /* --- TESTIMONIALS SECTION --- */
 .testimonials-section {
@@ -385,11 +358,123 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* --- ABOUT PAGE HERO (Desktop) --- */
+.about-hero {
+    min-height: 75vh;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 40px 10%;
+    /* Replace with your exact image filename! */
+    background-image: url('lucy-columns.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.about-textbox {
+    background-color: rgba(26, 21, 21, 0.85); 
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 550px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px); 
+}
+
+.about-textbox h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--burgundy);
+    padding-bottom: 10px;
+}
+
+.about-textbox p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.gm-stats-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 
+/* --- ABOUT PAGE: STAT BLOCK (Tags) --- */
+.stat-block-section {
+    background-color: #120e0e; /* Slightly darker than main bg for contrast */
+    padding: 40px 20px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.stat-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-category h4 {
+    color: var(--burgundy);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: rgba(212, 175, 55, 0.1); /* Faint gold background */
+    border: 1px solid var(--gold);
+    color: var(--text-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* --- ABOUT PAGE: CALL TO ACTION --- */
+.about-cta-section {
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, rgba(74, 14, 23, 0.3) 0%, rgba(26, 21, 21, 1) 100%);
+    text-align: center;
+    border-top: 2px solid var(--burgundy);
+}
+
+.cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-container p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (Always keep at the bottom!) --- */
 @media (max-width: 768px) {
     /* Stack the navigation bar */
     .navbar {
@@ -403,14 +488,23 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center;
         gap: 15px;
     }
+    
+    /* Mobile CTA Fixes */
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .stat-container {
+        flex-direction: column;
+        gap: 40px;
+    }
 
-    /* Mobile Hero Layout */
+    /* Mobile Homepage Hero Layout */
     .hero {
         background-position: center center;
         padding: 100px 20px 60px 20px;
     }
 
-    /* Make the overlay darker on mobile since text will sit right over the image */
     .hero::before {
         background: rgba(26, 21, 21, 0.75); 
     }
@@ -439,7 +533,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .btn-primary, .btn-secondary {
-        width: 100%; /* Makes buttons full width on mobile */
+        width: 100%; 
         text-align: center;
     }
 
@@ -450,5 +544,19 @@ h1, h2, h3, h4, h5, h6 {
 
     .corporate-card {
         padding: 40px 20px;
+    }
+
+    /* Mobile About Page Fixes */
+    .about-hero {
+        justify-content: center;
+        padding: 100px 20px 40px 20px;
+    }
+    
+    .about-textbox {
+        padding: 25px;
+    }
+    
+    .about-textbox h1 {
+        font-size: 2rem;
     }
 }
