@@ -1,21 +1,19 @@
 /* --- GLOBAL VARIABLES & RESET --- */
 :root {
-    /* The Foundation (Palette 2) */
-    --bg-dark: #120F0E; /* Pitch Black - Deep, expensive museum background */
-    --text-light: #E8EBE9; /* Alabaster Grey - Crisp, readable paragraph text */
-    --text-muted: #D7CFC0; /* Bone - For subtitles and secondary text */
+    /* The Plain Base */
+    --bg-light: #FAFAFA; /* Crisp, clean off-white */
+    --bg-pure: #FFFFFF; /* Pure white for cards and floating boxes */
     
-    /* The Accents */
-    /* Warmed up from Deep Mocha to give that "Vibrant/Fun" player energy */
-    --burgundy: #8c4a32; /* A warm, vibrant brick/rust color */
-    --burgundy-hover: #6b3724; 
+    /* The Text */
+    --text-dark: #2B2D42; /* Deep, professional slate grey (easier on eyes than pure black) */
+    --text-muted: #6B7280; /* Soft grey for subtitles */
     
-    /* Corporate Trust Color from Palette 2 */
-    --corporate-blue: #353E53; 
-    --corporate-blue-hover: #262c3b;
-
-    /* Highlight color (Keeping a hint of gold for the fantasy vibe) */
-    --gold: #D7CFC0; /* Swapped to 'Bone' to keep it authentic to the photo */
+    /* The Pop of Color (Matching your dress!) */
+    --pop-blue: #77AFBD; 
+    --pop-blue-hover: #5d929f;
+    
+    /* Kept strictly for the 5-star reviews */
+    --gold: #D4AF37; 
     
     --font-heading: 'Cinzel', serif;
     --font-body: 'Raleway', sans-serif;
@@ -28,76 +26,62 @@
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
     font-family: var(--font-body);
     line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--gold); /* Headings will now be that beautiful Bone color */
+    color: var(--text-dark); /* Headings are now clean and dark */
 }
 
-/* --- NAVIGATION BAR (Castle Aesthetic) --- */
+
+/* Update your Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    /* Deep charcoal background with a solid burgundy bottom border */
-    background-color: var(--bg-dark);
-    border-bottom: 2px solid var(--burgundy);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    background-color: var(--bg-pure);
+    border-bottom: 2px solid var(--pop-blue); /* Blue accent line */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Softer shadow */
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--gold); /* Switched to Gold */
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
+    color: var(--pop-blue); /* Logo is now your dress color */
+    text-shadow: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    color: var(--text-dark);
 }
 
-/* Hover effect now turns text gold and adds a subtle glow */
 .nav-links a:hover {
-    color: var(--gold);
-    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    color: var(--pop-blue);
+    text-shadow: none;
 }
 
-/* Update the Book Now button in the nav */
-.nav-links .btn-primary-small {
-    background-color: var(--burgundy);
-    color: var(--text-light);
-    border: 1px solid var(--burgundy);
+/* Update your Buttons */
+.btn-primary {
+    background-color: var(--pop-blue);
+    color: var(--bg-pure);
+    border: 1px solid var(--pop-blue);
+    box-shadow: 0 4px 15px rgba(119, 175, 189, 0.4); /* Blue glow */
 }
 
-.nav-links .btn-primary-small:hover {
-    background-color: var(--bg-dark);
-    color: var(--gold);
-    border: 1px solid var(--gold);
+.btn-primary:hover {
+    background-color: var(--pop-blue-hover);
+    color: var(--bg-pure);
+    border: 1px solid var(--pop-blue-hover);
+}
+
+.btn-secondary {
+    background-color: var(--bg-pure);
+    color: var(--pop-blue);
+    border: 1px solid var(--pop-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--pop-blue);
+    color: var(--bg-pure);
 }
 
 /* --- HERO SECTION (Cinematic Background) --- */
@@ -123,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     /* Fades from dark on the left to completely transparent over you */
-    background: linear-gradient(to right, rgba(26, 21, 21, 0.95) 0%, rgba(26, 21, 21, 0.6) 40%, rgba(0,0,0,0) 80%);
+    background: linear-gradient(to right, rgba(250, 250, 250, 0.95) 0%, rgba(250, 250, 250, 0.7) 40%, rgba(0,0,0,0) 80%);
     z-index: 1;
 }
 
@@ -143,17 +127,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-text-left h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    color: var(--pop-blue); /* Make your main headline that beautiful blue! */
+    text-shadow: none; 
 }
-
 .hero-text-left .subtitle {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    font-weight: 600;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9); /* Extra shadow for readability */
+    color: var(--text-dark);
+    text-shadow: none; 
 }
 
 /* Stacking the buttons on the right side */
@@ -441,26 +420,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-textbox {
-    background-color: rgba(26, 21, 21, 0.85); 
-    border: 1px solid var(--gold);
+    background-color: rgba(255, 255, 255, 0.9); /* White transparent */
+    border: 1px solid var(--pop-blue);
     border-radius: 8px;
     padding: 40px;
     max-width: 550px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     backdrop-filter: blur(5px); 
 }
 
 .about-textbox h1 {
     font-size: 2.5rem;
     margin-bottom: 5px;
-    border-bottom: 1px solid var(--burgundy);
+    border-bottom: 1px solid var(--pop-blue);
     padding-bottom: 10px;
 }
 
 .about-textbox p {
     margin-bottom: 15px;
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 .gm-stats-section {
@@ -575,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero::before {
-        background: rgba(26, 21, 21, 0.75); 
+       background: rgba(250, 250, 250, 0.85); 
     }
 
     .hero-content-wide {
