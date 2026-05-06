@@ -1,12 +1,13 @@
 /* --- GLOBAL VARIABLES & RESET --- */
 :root {
-    --burgundy: #800020;
-    --burgundy-hover: #5a0016;
-    --dark-stone: #1a1a1d;
-    --parchment: #FBF5DF;
-    --text-light: #e0e0e0;
+    --bg-dark: #1a1515; /* Charcoal/Dark Brown Base */
+    --burgundy: #4a0e17; /* Deep Rich Burgundy */
+    --burgundy-hover: #2e080e; /* Darker shade for hovers */
+    --gold: #d4af37; /* Subtle Fantasy Gold */
+    --gold-hover: #b5952f;
+    --text-light: #e0d8c8; /* Soft parchment/off-white */
     --font-heading: 'Cinzel', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Raleway', sans-serif;
 }
 
 * {
@@ -16,30 +17,41 @@
 }
 
 body {
-    background-color: var(--dark-stone);
+    background-color: var(--bg-dark);
     color: var(--text-light);
     font-family: var(--font-body);
     line-height: 1.6;
 }
 
-/* --- NAVIGATION BAR --- */
+/* Update Headers to use Gold */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--gold);
+}
+
+/* --- NAVIGATION BAR (Castle Aesthetic) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: rgba(26, 26, 29, 0.95);
-    border-bottom: 1px solid #333;
+    /* Deep charcoal background with a solid burgundy bottom border */
+    background-color: var(--bg-dark);
+    border-bottom: 2px solid var(--burgundy);
     position: sticky;
     top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--parchment);
-    letter-spacing: 2px;
+    color: var(--gold); /* Switched to Gold */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .nav-links {
@@ -53,13 +65,29 @@ body {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    transition: color 0.3s;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
+/* Hover effect now turns text gold and adds a subtle glow */
 .nav-links a:hover {
-    color: var(--parchment);
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Update the Book Now button in the nav */
+.nav-links .btn-primary-small {
+    background-color: var(--burgundy);
+    color: var(--text-light);
+    border: 1px solid var(--burgundy);
+}
+
+.nav-links .btn-primary-small:hover {
+    background-color: var(--bg-dark);
+    color: var(--gold);
+    border: 1px solid var(--gold);
 }
 
 /* --- HERO SECTION --- */
