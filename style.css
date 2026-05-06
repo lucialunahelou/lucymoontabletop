@@ -1,11 +1,22 @@
 /* --- GLOBAL VARIABLES & RESET --- */
 :root {
-    --bg-dark: #1a1515; /* Charcoal/Dark Brown Base */
-    --burgundy: #4a0e17; /* Deep Rich Burgundy */
-    --burgundy-hover: #2e080e; /* Darker shade for hovers */
-    --gold: #d4af37; /* Subtle Fantasy Gold */
-    --gold-hover: #b5952f;
-    --text-light: #e0d8c8; /* Soft parchment/off-white */
+    /* The Foundation (Palette 2) */
+    --bg-dark: #120F0E; /* Pitch Black - Deep, expensive museum background */
+    --text-light: #E8EBE9; /* Alabaster Grey - Crisp, readable paragraph text */
+    --text-muted: #D7CFC0; /* Bone - For subtitles and secondary text */
+    
+    /* The Accents */
+    /* Warmed up from Deep Mocha to give that "Vibrant/Fun" player energy */
+    --burgundy: #8c4a32; /* A warm, vibrant brick/rust color */
+    --burgundy-hover: #6b3724; 
+    
+    /* Corporate Trust Color from Palette 2 */
+    --corporate-blue: #353E53; 
+    --corporate-blue-hover: #262c3b;
+
+    /* Highlight color (Keeping a hint of gold for the fantasy vibe) */
+    --gold: #D7CFC0; /* Swapped to 'Bone' to keep it authentic to the photo */
+    
     --font-heading: 'Cinzel', serif;
     --font-body: 'Raleway', sans-serif;
 }
@@ -23,10 +34,9 @@ body {
     line-height: 1.6;
 }
 
-/* Update Headers to use Gold */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--gold);
+    color: var(--gold); /* Headings will now be that beautiful Bone color */
 }
 
 /* --- NAVIGATION BAR (Castle Aesthetic) --- */
