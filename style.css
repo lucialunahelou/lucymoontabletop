@@ -711,6 +711,46 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     line-height: 1.7;
 }
 
+/* --- UNDER CONSTRUCTION PAGE --- */
+.construction-container {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--ivory);
+}
+
+.construction-logo {
+    width: 140px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    border: 2px solid var(--pale-oak);
+    padding: 5px;
+}
+
+.construction-container h1 {
+    font-size: 3.5rem;
+    color: var(--forest-green);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.construction-container p {
+    font-size: 1.2rem;
+    color: var(--carbon-black);
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.construction-buttons {
+    display: flex;
+    gap: 20px;
+}
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
@@ -789,5 +829,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
         padding: 10px;
         border-bottom: none;
         color: var(--grey-olive);
+    }
+    /* Under Construction Mobile */
+    .construction-container h1 {
+        font-size: 2.5rem;
+    }
+    .construction-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
     }
 }
