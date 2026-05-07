@@ -15,84 +15,88 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">LUCY MOON</div>
+<nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
+            <span class="logo-text">LUCY MOON</span>
+        </a>
         <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#campaigns">Campaigns</a></li>
-            <li><a href="#corporate">Corporate Solutions</a></li>
-            <li><a href="#contact" class="btn-primary-small">Book Now</a></li>
+            <li><a href="index.html#campaigns">Campaigns</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="corporate.html">Corporate & B2B</a>
+                    <a href="private-campaigns.html">Private Group Campaigns</a>
+                    <a href="private-events.html">Private Events & Birthdays</a>
+                </div>
+            </li>
+            
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#campaigns" class="btn-primary-small">Join a Game!</a></li>
         </ul>
     </nav>
 
-<!-- Hero Section (Cinematic Background) -->
     <header class="hero">
         <div class="hero-content-wide">
-            <!-- Left Side: Text -->
             <div class="hero-text-left">
                 <h1>Elevating Tabletop Narratives.</h1>
-                <p class="subtitle">Professional Dungeon Master | Immersive Campaigns & Bespoke Corporate Team Building.</p>
+                <p class="subtitle">Immersive Online Campaigns</p>
+                <p class="subtitle">& Masterfully Crafted In-Person Events.</p>
             </div>
-            
-            <!-- Right Side: Buttons -->
             <div class="hero-buttons-right">
                 <a href="#campaigns" class="btn-primary">Join a Campaign</a>
-                <a href="#corporate" class="btn-secondary">Request Proposal</a>
+                <a href="#services" class="btn-secondary">Request Event Proposal</a>
             </div>
         </div>
     </header>
 
-<!-- Campaigns Section -->
     <section id="campaigns" class="campaign-section">
         <h2 class="section-title">Upcoming Campaigns</h2>
-        
         <div class="grid-container">
-            <!-- Campaign Card 1 -->
             <div class="campaign-card">
                 <div class="card-header">
                     <h3>The Curse of Strahd</h3>
                     <span class="badge">Weekly</span>
                 </div>
                 <p class="card-details">
-                    <strong>Time:</strong>
-                    <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
+                    <strong>Time:</strong> <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
                 </p>
                 <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
+                <p class="card-details"><strong>Platform:</strong> Foundry VTT & Discord</p>
                 <p class="card-price">€30 / session</p>
-                <!-- We will replace the # with your Stripe link later -->
                 <a href="#" class="btn-primary-small full-width">Subscribe & Book</a>
             </div>
 
-            <!-- Campaign Card 2 -->
             <div class="campaign-card">
                 <div class="card-header">
                     <h3>Dragon of Icespire Peak</h3>
                     <span class="badge">Weekly</span>
                 </div>
                 <p class="card-details">
-                    <strong>Time:</strong>
-                    <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
+                    <strong>Time:</strong> <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
                 </p>
                 <p class="card-details"><strong>Seats:</strong> 5/6 Filled</p>
+                <p class="card-details"><strong>Platform:</strong> Foundry VTT & Discord</p>
                 <p class="card-price">€20 / session</p>
                 <a href="#" class="btn-primary-small full-width">Subscribe & Book</a>
             </div>
+        </div>
+    </section>
 
-            <!-- One-Shot Card -->
-            <div class="campaign-card">
-                <div class="card-header">
-                    <h3>Goblin Heist</h3>
-                    <span class="badge one-shot">One-Shot</span>
-                </div>
-                <p class="card-details">
-                    <strong>Date:</strong>
-                    <span class="local-time" data-time="2026-05-15T18:00:00Z" data-format="date">May 15th, 8:00 PM CEST</span>
-                </p>
-                <p class="card-details"><strong>Seats:</strong> 2/5 Filled</p>
-                <p class="card-price">€25 Total</p>
-                <a href="#" class="btn-primary-small full-width">Book Seat</a>
+    <section id="services" class="corporate-section">
+        <div class="corporate-card">
+            <h2 class="corporate-title">Unique Services</h2>
+            <h4 class="corporate-subtitle">Corporate Team Building & Private Events</h4>
+            <p>Whether you want to hire me to run a specific module for your friend group, or you want to replace standard corporate trust falls with collaborative problem-solving disguised as an epic fantasy quest, I build experiences tailored to your objectives.</p>
+            
+            <div class="location-badge" style="margin-bottom: 30px; font-weight: bold; color: var(--pale-oak);">
+                🌐 Available Worldwide Online <br> ✈️ Available In-Person across Northern Italy & Select European Locations.
             </div>
+
+            <a href="mailto:booking@lucymoontabletop.com" class="btn-primary">Request a Proposal</a>
         </div>
     </section>
 
@@ -209,6 +213,28 @@
         });
     </script>
 </body>
-    
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="lucy-logo.png" alt="Lucy Moon Seal">
+                <div class="footer-brand-text">
+                    <h3>LUCY MOON</h3>
+                    <p>Professional Game Master</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="policies.html">Terms & Policies</a>
+                <a href="mailto:booking@lucymoontabletop.com">Contact</a>
+            </div>
+        </div>
+        
+        <div class="footer-legal">
+            <p>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</p>
+            <p>P.IVA: 13421660013</p>
+        </div>
+    </footer>
+
 </body>
 </html>
