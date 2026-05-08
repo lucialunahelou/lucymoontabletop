@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucy Moon | Professional Dungeon Master</title>
+    <link rel="icon" type="image/png" href="lucy-favicon.png">
     
     <!-- Importing our Museum Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,7 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="index.html#campaigns">Campaigns</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
             
             <li class="dropdown">
                 <a href="#" class="dropbtn">Services ▾</a>
@@ -54,37 +55,91 @@
     </header>
 
     <section id="campaigns" class="campaign-section">
-        <h2 class="section-title">Upcoming Campaigns</h2>
-        <div class="grid-container">
+        <div class="policy-header" style="margin-bottom: 30px; border-bottom: none;">
+            <h2 class="section-title" style="margin-bottom: 10px;">Open Seats at the Table</h2>
+            <p style="text-align: center; color: var(--grey-olive); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join an upcoming or active campaign</p>
+        </div>
+
+        <div class="currency-toggle-container">
+            <span class="currency-label">Currency:</span>
+            <button class="currency-btn active" data-currency="eur">EUR</button>
+            <button class="currency-btn" data-currency="usd">USD</button>
+            <button class="currency-btn" data-currency="aud">AUD</button>
+        </div>
+
+        <div class="grid-container" style="margin-bottom: 50px;">
+            
             <div class="campaign-card">
                 <div class="card-header">
-                    <h3>The Curse of Strahd</h3>
-                    <span class="badge">Weekly</span>
+                    <h3>Curse of Strahd: Director's Cut</h3>
+                    <span class="badge" style="background-color: var(--pale-oak); color: var(--forest-green); line-height: 1.2;">Gathering<br>the Party!</span>
                 </div>
-                <p class="card-details">
-                    <strong>Time:</strong> <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
-                </p>
+                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></p>
+                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
                 <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
-                <p class="card-details"><strong>Platform:</strong> Foundry VTT & Discord</p>
-                <p class="card-price">€30 / session</p>
-                <a href="#" class="btn-primary-small full-width">Subscribe & Book</a>
+                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
+                    <a href="#" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                </div>
             </div>
 
             <div class="campaign-card">
                 <div class="card-header">
-                    <h3>Dragon of Icespire Peak</h3>
-                    <span class="badge">Weekly</span>
+                    <h3>Curse of Strahd: Director's Cut</h3>
+                    <span class="badge" style="background-color: var(--pale-oak); color: var(--forest-green); line-height: 1.2;">Gathering<br>the Party!</span>
                 </div>
-                <p class="card-details">
-                    <strong>Time:</strong> <span class="local-time" data-time="2026-05-12T17:00:00Z" data-format="weekly">Tuesdays, 7:00 PM CEST</span>
-                </p>
-                <p class="card-details"><strong>Seats:</strong> 5/6 Filled</p>
-                <p class="card-details"><strong>Platform:</strong> Foundry VTT & Discord</p>
-                <p class="card-price">€20 / session</p>
-                <a href="#" class="btn-primary-small full-width">Subscribe & Book</a>
+                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></p>
+                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
+                <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
+                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
+                    <a href="#" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                </div>
             </div>
+            
+            <div class="campaign-card">
+                <div class="card-header">
+                    <h3>Curse of Strahd: Director's Cut</h3>
+                    <span class="badge" style="background-color: var(--forest-green); color: var(--ivory);">Ongoing</span>
+                </div>
+                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></p>
+                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
+                <p class="card-details"><strong>Seats:</strong> 3/5 Filled</p>
+                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
+                    <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Join on SPG</a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="campaigns.html" class="btn-secondary" style="padding: 15px 40px; font-size: 1.1rem; border-width: 2px;">View All Campaigns</a>
         </div>
     </section>
+
+<section class="community-banner">
+            <h2>More Than Just a Game</h2>
+            <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
+            
+            <div class="community-features">
+                <div class="comm-feature">
+                    <h4>The Private Tavern</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
+                </div>
+                <div class="comm-feature">
+                    <h4>Zero Toxicity</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
+                </div>
+                <div class="comm-feature">
+                    <h4>Direct Access</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
+                </div>
+            </div>
+        </section>
 
     <section id="services" class="corporate-section">
         <div class="corporate-card">
@@ -235,6 +290,11 @@
             <p>P.IVA: 13421660013</p>
         </div>
     </footer>
+
+<script src="timezone.js"></script>
+</body>
+</html>
+
 
 </body>
 </html>

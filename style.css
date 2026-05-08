@@ -1,10 +1,10 @@
 /* --- GLOBAL VARIABLES & RESET --- */
 :root {
     --ivory: #F9F8EB;
-    --peach-fuzz: #FDCFB4; /* Kept strictly for the tiny One-Shot badge */
+    --peach-fuzz: #FDCFB4; 
     --pale-oak: #D7C59C;
     --grey-olive: #94907C;
-    --forest-green: #1E3B24; /* New deep forest green */
+    --forest-green: #1E3B24; 
     
     --font-heading: 'Cinzel', serif;
     --font-body: 'Raleway', sans-serif;
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     padding: 20px 10%;
     background-color: var(--ivory);
     border-bottom: 2px solid var(--pale-oak);
-    box-shadow: 0 4px 10px rgba(30, 59, 36, 0.08); /* Forest Green shadow */
+    box-shadow: 0 4px 10px rgba(30, 59, 36, 0.08); 
 }
 .logo {
     display: flex;
@@ -74,14 +74,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #FFFFFF; /* Pure white to pop against the Ivory nav bar */
+    background-color: #FFFFFF; 
     min-width: 240px;
     box-shadow: 0 8px 20px rgba(30, 59, 36, 0.1);
     border: 1px solid var(--pale-oak);
     border-radius: 6px;
-    z-index: 100; /* Ensures it stays on top of images/text below */
+    z-index: 100; 
     overflow: hidden;
-    margin-top: 15px; /* Creates a tiny gap below the nav bar */
+    margin-top: 15px; 
 }
 
 .dropdown-content a {
@@ -99,22 +99,19 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 }
 
 .dropdown-content a:last-child {
-    border-bottom: none; /* Removes the line under the last item */
+    border-bottom: none; 
 }
 
-/* Hover effects for the dropdown links */
 .dropdown-content a:hover {
     background-color: var(--pale-oak);
     color: var(--forest-green);
-    padding-left: 25px; /* Creates a cool sliding effect when hovered! */
+    padding-left: 25px; 
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* This invisible bridge prevents the menu from closing when moving the mouse down */
 .dropdown::after {
     content: '';
     position: absolute;
@@ -124,7 +121,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     height: 15px;
 }
 
-/* FIX: Forces the Book Now button inside the nav to have Ivory text */
 .nav-links a.btn-primary-small {
     color: var(--ivory);
 }
@@ -134,6 +130,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 
 /* --- BUTTONS --- */
 .btn-primary, .btn-secondary, .btn-primary-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     padding: 15px 30px;
@@ -143,7 +142,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    display: inline-block;
     cursor: pointer;
 }
 .btn-primary-small {
@@ -151,7 +149,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     font-size: 0.9rem;
 }
 
-/* Primary Buttons (Join Campaign / Book Now) */
 .btn-primary, .btn-primary-small {
     background-color: var(--forest-green);
     color: var(--ivory);
@@ -165,7 +162,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     transform: translateY(-2px);
 }
 
-/* Secondary Buttons (Request Proposal) - Changed to solid Ivory for visibility */
 .btn-secondary {
     background-color: var(--ivory);
     color: var(--forest-green);
@@ -177,7 +173,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     color: var(--ivory);
     transform: translateY(-2px);
 }
-.full-width { display: block; width: 100%; }
+.full-width { display: flex; width: 100%; }
 
 /* --- HERO SECTION --- */
 .hero {
@@ -226,6 +222,22 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     min-width: 250px;
 }
 
+/* --- PATTERN BACKGROUNDS --- */
+.pattern-bg {
+    /* Washes the pattern with an 85% Ivory overlay so it stays delicate */
+    background-image: linear-gradient(rgba(249, 248, 235, 0.85), rgba(249, 248, 235, 0.85)), url('wallpaper.png');
+    background-size: 400px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.pattern-page {
+    background-image: linear-gradient(rgba(249, 248, 235, 0.85), rgba(249, 248, 235, 0.85)), url('wallpaper.png');
+    background-size: 400px;
+    background-repeat: repeat;
+    background-attachment: fixed; /* Creates a premium parallax scrolling effect */
+}
+
 /* --- CAMPAIGNS SECTION --- */
 .campaign-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
 .section-title {
@@ -269,6 +281,11 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     font-size: 1.4rem;
 }
 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;     /* NEW: Centers the text perfectly if it wraps */
+    flex-shrink: 0;         /* NEW: Stops long titles from squishing it */
     background-color: var(--forest-green);
     color: var(--ivory);
     font-size: 0.75rem;
@@ -381,7 +398,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 .corporate-subtitle { font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; color: var(--grey-olive); }
 .corporate-card p { margin-bottom: 40px; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-/* --- ABOUT PAGE HERO (Desktop) --- */
+/* --- ABOUT PAGE HERO --- */
 .about-hero {
     min-height: 75vh;
     display: flex;
@@ -411,7 +428,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 .about-textbox p { margin-bottom: 15px; font-size: 1.1rem; color: var(--forest-green); }
 .gm-stats-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
 
-/* --- ABOUT PAGE: STAT BLOCK (Tags) --- */
+/* --- ABOUT PAGE: STAT BLOCK --- */
 .stat-block-section {
     background-color: #FFFFFF;
     padding: 40px 20px;
@@ -429,7 +446,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 }
 .tag-group { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag {
-    /* Subtle pale oak tint for the tags */
     background-color: rgba(215, 197, 156, 0.2); 
     border: 1px solid var(--pale-oak);
     color: var(--forest-green);
@@ -442,7 +458,6 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 /* --- ABOUT PAGE: CALL TO ACTION --- */
 .about-cta-section {
     padding: 80px 20px;
-    /* Soft pale oak gradient replaces the pink */
     background: linear-gradient(135deg, rgba(215, 197, 156, 0.3) 0%, var(--ivory) 100%);
     text-align: center;
     border-top: 2px solid var(--pale-oak);
@@ -452,75 +467,13 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 .cta-container p { font-size: 1.1rem; margin-bottom: 40px; color: var(--grey-olive); }
 .cta-buttons { display: flex; justify-content: center; gap: 20px; }
 
-/* --- FOOTER SECTION --- */
-.footer {
-    background-color: var(--forest-green);
-    color: var(--ivory);
-    padding: 60px 20px 20px 20px;
-    border-top: 4px solid var(--pale-oak);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(215, 197, 156, 0.2); /* Faint Pale Oak line */
-    padding-bottom: 40px;
-    margin-bottom: 20px;
-}
-
-.footer-brand h3 {
-    font-family: var(--font-heading);
-    color: var(--pale-oak);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.footer-brand p {
-    color: var(--ivory);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 30px;
-}
-
-.footer-links a {
-    color: var(--ivory);
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--pale-oak);
-}
-
-.footer-legal {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: rgba(249, 248, 235, 0.6); /* Dimmed Ivory */
-}
-
 /* --- POLICIES PAGE --- */
 .policy-container {
     max-width: 900px;
     margin: 60px auto 100px auto;
     padding: 60px;
     background-color: #FFFFFF;
-    border: 1px solid rgba(148, 144, 124, 0.3); /* Grey Olive border */
+    border: 1px solid rgba(148, 144, 124, 0.3); 
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(30, 59, 36, 0.05);
 }
@@ -576,7 +529,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
 }
 
 .policy-item p, .policy-item ul {
-    color: #2B2D42; /* A dark readable slate for long text */
+    color: #2B2D42; 
     line-height: 1.8;
 }
 
@@ -589,7 +542,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     margin-bottom: 8px;
 }
 
-/* --- UPDATED FOOTER SECTION --- */
+/* --- FOOTER SECTION --- */
 .footer {
     background-color: var(--forest-green);
     color: var(--ivory);
@@ -752,6 +705,268 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     gap: 20px;
 }
 
+/* --- CAMPAIGN DOSSIER PAGES --- */
+.dossier-container {
+    max-width: 900px;
+    margin: 60px auto 100px auto;
+    background-color: #FFFFFF;
+    border: 1px solid var(--pale-oak);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(30, 59, 36, 0.08);
+    overflow: hidden;
+}
+
+.dossier-hero-img {
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+}
+
+.dossier-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.dossier-header {
+    background-color: var(--forest-green);
+    color: var(--ivory);
+    padding: 60px 40px;
+    text-align: center;
+    border-bottom: 4px solid var(--pale-oak);
+}
+
+.dossier-header h1 {
+    font-size: 3.5rem;
+    color: var(--ivory);
+    margin-bottom: 5px;
+}
+
+.dossier-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--pale-oak);
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+.dossier-specs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: rgba(215, 197, 156, 0.2);
+    padding: 20px;
+    border-bottom: 1px solid rgba(148, 144, 124, 0.3);
+}
+
+.spec-item {
+    font-size: 0.9rem;
+    color: var(--forest-green);
+}
+
+.dossier-content {
+    padding: 50px 60px;
+}
+
+.dossier-content h3 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--pale-oak);
+    padding-bottom: 10px;
+}
+
+.dossier-content h3:first-child {
+    margin-top: 0;
+}
+
+.dossier-content p, .dossier-content ul {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #2B2D42;
+}
+
+.dossier-content ul {
+    margin-left: 25px;
+}
+
+.dossier-content li {
+    margin-bottom: 10px;
+}
+
+.content-warnings {
+    background-color: rgba(148, 144, 124, 0.1);
+    border: 1px solid var(--grey-olive);
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.content-warnings summary {
+    font-weight: bold;
+    color: var(--forest-green);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.warnings-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--grey-olive);
+}
+
+.warnings-grid ul {
+    flex: 1;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.dossier-cta {
+    background-color: rgba(215, 197, 156, 0.3);
+    text-align: center;
+    padding: 50px 40px;
+    border-top: 1px solid var(--pale-oak);
+}
+
+.dossier-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dossier-cta p {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: var(--grey-olive);
+}
+
+/* --- BOOKING INFO BOX --- */
+.booking-info-box {
+    background-color: rgba(215, 197, 156, 0.15); /* Soft Pale Oak */
+    border-left: 4px solid var(--pale-oak);
+    padding: 25px 30px;
+    margin: 40px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.booking-info-box h3 {
+    margin-top: 0 !important;
+    font-size: 1.4rem !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.booking-info-box p {
+    font-size: 0.95rem !important;
+    margin-bottom: 10px !important;
+}
+
+.booking-info-box ul {
+    font-size: 0.95rem;
+    margin-bottom: 0 !important;
+}
+
+.booking-info-box li {
+    margin-bottom: 5px !important;
+}
+
+/* --- CURRENCY TOGGLE --- */
+.currency-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.currency-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--grey-olive);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}
+
+.currency-btn {
+    background-color: transparent;
+    border: 2px solid var(--pale-oak);
+    color: var(--grey-olive);
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.currency-btn:hover {
+    border-color: var(--forest-green);
+    color: var(--forest-green);
+}
+
+.currency-btn.active {
+    background-color: var(--pale-oak);
+    color: var(--forest-green);
+    border-color: var(--pale-oak);
+}
+
+/* --- COMMUNITY BANNER --- */
+.community-banner {
+    background: linear-gradient(135deg, var(--forest-green) 0%, #141111 100%);
+    color: var(--ivory);
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 4px solid var(--pale-oak);
+    border-bottom: 4px solid var(--pale-oak);
+    margin: 60px 0;
+}
+
+.community-banner h2 {
+    color: var(--pale-oak);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.community-banner p {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: rgba(249, 248, 235, 0.9);
+}
+
+.community-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.comm-feature {
+    background-color: rgba(215, 197, 156, 0.1);
+    border: 1px solid rgba(215, 197, 156, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.comm-feature h4 {
+    color: var(--pale-oak);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .navbar { flex-direction: column; padding: 15px 20px; }
@@ -771,14 +986,14 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     .about-hero { justify-content: center; padding: 100px 20px 40px 20px; }
     .about-textbox { padding: 25px; }
     .about-textbox h1 { font-size: 2rem; }
-    /* Mobile Footer */
+    
     .footer-container {
         flex-direction: column;
         text-align: center;
         gap: 30px;
     }
     .footer-brand {
-        flex-direction: column; /* Stacks the logo above the text on phones */
+        flex-direction: column; 
         gap: 10px;
     }
     .footer-legal {
@@ -790,7 +1005,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
         padding: 30px 20px;
         margin: 30px 15px 60px 15px;
     }
-    /* Mobile Dropdown Fixes */
+    
     .dropdown {
         width: 100%;
         text-align: center;
@@ -798,7 +1013,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
     .dropdown:hover .dropdown-content, .dropdown:focus .dropdown-content {
         display: flex;
         flex-direction: column;
-        position: static; /* Stops it from floating weirdly on phones */
+        position: static; 
         box-shadow: none;
         border: none;
         background-color: transparent;
@@ -810,27 +1025,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
         border-bottom: none;
         color: var(--grey-olive);
     }
-    /* Mobile Dropdown Fixes */
-    .dropdown {
-        width: 100%;
-        text-align: center;
-    }
-    .dropdown:hover .dropdown-content, .dropdown:focus .dropdown-content {
-        display: flex;
-        flex-direction: column;
-        position: static; /* Stops it from floating weirdly on phones */
-        box-shadow: none;
-        border: none;
-        background-color: transparent;
-        margin-top: 5px;
-    }
-    .dropdown-content a {
-        text-align: center;
-        padding: 10px;
-        border-bottom: none;
-        color: var(--grey-olive);
-    }
-    /* Under Construction Mobile */
+    
     .construction-container h1 {
         font-size: 2.5rem;
     }
@@ -839,4 +1034,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--forest-g
         width: 100%;
         max-width: 300px;
     }
+    
+    .dossier-header h1 { font-size: 2.5rem; }
+    .dossier-hero-img { height: 250px; } 
+    .dossier-content { padding: 30px 20px; }
+    .warnings-grid { flex-direction: column; gap: 10px; }
 }
