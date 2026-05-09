@@ -48,7 +48,7 @@
             <p class="dossier-quote" style="color: #a89f91;">"The mists of Barovia do not forgive, and they certainly do not forget."</p>
             
             <div style="margin-top: 30px;">
-                <a href="#" class="btn-primary" style="background-color: #8B0000; color: var(--ivory); border-color: #8B0000;">Book Your Seat</a>
+                <a href="#" class="btn-primary open-subscribe-modal" style="background-color: #8B0000; color: var(--ivory); border-color: #8B0000;">Book Your Seat</a>
             </div>
         </div>
 
@@ -120,10 +120,37 @@
         <div class="dossier-cta" style="background-color: rgba(139, 0, 0, 0.04); border-top: 1px solid #8B0000;">
             <h2 style="color: #141111;">The master of Castle Ravenloft is expecting you.</h2>
             <p style="color: #8B0000;">Are you ready to face the shadow?</p>
-            <a href="#" class="btn-primary" style="background-color: #141111; color: var(--ivory); border-color: #141111;">Book Your Seat</a>
+            <a href="#" class="btn-primary open-subscribe-modal" style="background-color: #141111; color: var(--ivory); border-color: #141111;">Book Your Seat</a>
         </div>
 
     </main>
+
+<div id="subscribe-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" id="close-subscribe-modal">&times;</span>
+        <h3 style="font-family: 'Cinzel', serif; color: var(--forest-green); margin-bottom: 5px;">Select Your Table</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 20px;">Choose the schedule that works best for you:</p>
+        
+        <div class="modal-options">
+            
+            <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" class="modal-option-card">
+                <span class="modal-time"><span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></span>
+                <span class="modal-price">€35.00 EUR / week</span>
+            </a>
+
+            <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" class="modal-option-card">
+                <span class="modal-time"><span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></span>
+                <span class="modal-price">€35.00 EUR / week</span>
+            </a>
+
+            <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" class="modal-option-card">
+                <span class="modal-time"><span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></span>
+                <span class="modal-price">Hosted via StartPlaying • €35.00 EUR / session</span>
+            </a>
+
+        </div>
+    </div>
+</div>
 
     <footer class="footer">
         <div class="footer-container">

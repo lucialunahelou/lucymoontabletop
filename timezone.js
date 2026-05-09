@@ -63,3 +63,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// --- MODAL POP-UP LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('subscribe-modal');
+    const openBtns = document.querySelectorAll('.open-subscribe-modal');
+    const closeBtn = document.getElementById('close-subscribe-modal');
+
+    // Make sure elements exist on the page before adding listeners
+    if(modal && closeBtn) {
+        // Open modal when ANY of the target buttons are clicked
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); // Stops the page from jumping to the top
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close modal when clicking the 'X'
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking on the dark background outside the box
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+});
