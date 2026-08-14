@@ -1,64 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucy Moon | Professional Dungeon Master</title>
+    <title>Lucy Moon | Professional Game Master</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
     
-    <!-- Importing our Museum Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Linking the CSS file we are about to create -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="41b2ca44-fd3a-4be9-8f79-754431b53675"></script>
 </head>
 <body>
 
+<!-- Minimalist Static Header -->
 <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-            <span class="logo-text">LUCY MOON</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="campaigns.html">Campaigns</a></li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="corporate.html">Corporate & B2B</a>
-                    <a href="private-campaigns.html">Private Group Campaigns</a>
-                    <a href="private-events.html">Private Events & Birthdays</a>
-                </div>
-            </li>
-            
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="campaigns.html" class="btn-primary-small">Join a Game!</a></li>
-        </ul>
-    </nav>
+    <a href="index.html" class="logo">
+        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
+        <span class="logo-text">LUCY MOON</span>
+    </a>
+    
+    <div class="nav-actions">
+        <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">🌓</button>
+        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    </div>
+</nav>
 
+<!-- Hidden Side Drawer -->
+<div id="nav-drawer" class="nav-drawer">
+    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="campaigns.html">Campaigns</a></li>
+        <li><a href="private-campaigns.html">Private Campaigns</a></li>
+        <li><a href="corporate.html">Corporate & B2B</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
+    </ul>
+</div>
+
+<!-- Darkening Overlay -->
+<div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- 1. The Hook (Hero) -->
     <header class="hero">
         <div class="hero-content-wide">
             <div class="hero-text-left">
-                <h1>Elevating Tabletop Narratives.</h1>
-                <p class="subtitle">Immersive Online Campaigns</p>
-                <p class="subtitle">& Masterfully Crafted In-Person Events.</p>
+                <h1>Grab a Chair.<br>Let's Tell a <span id="typewriter-text" class="typewriter-text"></span><span class="typewriter-cursor">|</span><br>Story.</h1>
+                <p class="subtitle" style="margin-bottom: 10px;">I run immersive D&D 5e campaigns where your character's backstory actually matters.</p>
+                <p class="subtitle" style="font-size: 1rem; opacity: 0.9;">Professional Foundry VTT environments. Zero toxicity.</p>
             </div>
             <div class="hero-buttons-right">
-                <a href="#campaigns" class="btn-primary">Join a Campaign</a>
-                <a href="#services" class="btn-secondary">Request Event Proposal</a>
+                <a href="#campaigns" class="btn-primary">View Open Tables</a>
+                <a href="#private-groups" class="btn-secondary">Bring Your Own Party</a>
             </div>
         </div>
     </header>
 
+    <!-- 2. Social Proof -->
+    <section id="testimonials" class="testimonials-section" style="padding: 40px 20px;">
+        <div class="testimonials-header" style="margin-bottom: 30px;">
+            <div class="proficiency-tags">
+                <span class="tag">★★★★★ Flawless Rating on StartPlaying</span>
+                <span class="tag">😊 Inclusive</span>
+                <span class="tag">✨ Creativity</span>
+                <span class="tag">🎵 Sets the Mood</span>
+            </div>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="testimonial-card">
+                <p class="quote">"Lucy as a Dungeon Master is truly exceptional. She is incredibly patient, always taking the time to listen, clarify rules, and make sure every player feels comfortable."</p>
+                <p class="author">— Matteo M.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"I so far have been having a great time with their campaigns, they are inclusive, supportive, and helpful. It feels like you actually have the freedom to play your character."</p>
+                <p class="author">— Android</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The sheer amount of care she puts into running campaigns, balancing encounters and making sure that the players are having a good experience would put her in my personal top 3 of DMs."</p>
+                <p class="author">— Simone A.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Primary CTA: Open Tables -->
     <section id="campaigns" class="campaign-section">
         <div class="policy-header" style="margin-bottom: 30px; border-bottom: none;">
-            <h2 class="section-title" style="margin-bottom: 10px;">Open Seats at the Table</h2>
-            <p style="text-align: center; color: var(--grey-olive); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join an upcoming or active campaign</p>
+            <h2 class="section-title" style="margin-bottom: 10px;">Current Campaigns</h2>
+            <p style="text-align: center; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join a table of like-minded players</p>
         </div>
 
         <div class="currency-toggle-container">
@@ -69,208 +104,88 @@
         </div>
 
         <div class="grid-container" style="margin-bottom: 50px;">
-            
             <div class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
-                    <span class="badge" style="background-color: var(--pale-oak); color: var(--forest-green); line-height: 1.2;">Gathering<br>the Party!</span>
+                    <span class="badge">Gathering</span>
                 </div>
                 <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></p>
-                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
                 <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" rel="noopener noreferrer"class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
                 </div>
             </div>
 
             <div class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
-                    <span class="badge" style="background-color: var(--pale-oak); color: var(--forest-green); line-height: 1.2;">Gathering<br>the Party!</span>
+                    <span class="badge">Gathering</span>
                 </div>
                 <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></p>
-                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
                 <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" rel="noopener noreferrer"class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
                 </div>
             </div>
             
             <div class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
-                    <span class="badge" style="background-color: var(--forest-green); color: var(--ivory);">Ongoing</span>
+                    <span class="badge" style="background-color: var(--accent-primary); color: var(--text-inverse);">Ongoing</span>
                 </div>
                 <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></p>
-                <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
                 <p class="card-details"><strong>Seats:</strong> 3/5 Filled</p>
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" target="_blank" rel="noopener noreferrer" class="btn-primary full-width" style="padding: 10px; text-align: center;">Join on SPG</a>
+                    <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Join on SPG</a>
                 </div>
             </div>
-
         </div>
+    </section>
+
+    <!-- 4. The Promise -->
+    <section class="community-banner">
+        <h2>More Than Just a Game</h2>
+        <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
         
-        <div style="text-align: center;">
-            <a href="campaigns.html" class="btn-secondary" style="padding: 15px 40px; font-size: 1.1rem; border-width: 2px;">View All Campaigns</a>
+        <div class="community-features">
+            <div class="comm-feature">
+                <h4>The Private Tavern</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
+            </div>
+            <div class="comm-feature">
+                <h4>Zero Toxicity</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
+            </div>
+            <div class="comm-feature">
+                <h4>Direct Access</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
+            </div>
         </div>
     </section>
 
-<section class="community-banner">
-            <h2>More Than Just a Game</h2>
-            <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
-            
-            <div class="community-features">
-                <div class="comm-feature">
-                    <h4>The Private Tavern</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
-                </div>
-                <div class="comm-feature">
-                    <h4>Zero Toxicity</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
-                </div>
-                <div class="comm-feature">
-                    <h4>Direct Access</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
-                </div>
-            </div>
-        </section>
-
-    <section id="services" class="corporate-section">
-        <div class="corporate-card">
-            <h2 class="corporate-title">Unique Services</h2>
-            <h4 class="corporate-subtitle">Corporate Team Building & Private Events</h4>
-            <p>Whether you want to hire me to run a specific module for your friend group, or you want to replace standard corporate trust falls with collaborative problem-solving disguised as an epic fantasy quest, I build experiences tailored to your objectives.</p>
-            
-            <div class="location-badge" style="margin-bottom: 30px; font-weight: bold; color: var(--pale-oak);">
-                🌐 Available Worldwide Online <br> ✈️ Available In-Person across Northern Italy & Select European Locations.
-            </div>
-
-            <a href="mailto:lucymoontabletop@gmail.com" class="btn-primary">Request a Proposal</a>
+    <!-- 5. Private Groups -->
+    <section id="private-groups" class="corporate-section">
+        <div class="corporate-card" style="border-top-color: var(--accent-secondary);">
+            <h2 class="corporate-title">Bring Your Own Party</h2>
+            <h4 class="corporate-subtitle">Pre-formed Groups & Custom Modules</h4>
+            <p>Already have a group of friends ready to roll? If you book a full table together, you will automatically get a group discount.</p>
+            <p>If the campaigns currently on my schedule aren't exactly what you are looking for, no problem at all! We can pick an official module or setting together. Because I build my virtual tabletops to a highly automated, premium standard, I just ask for 1 to 2 months of prep time to get everything perfect for your Session Zero.</p>
+            <a href="mailto:lucymoontabletop@gmail.com?subject=Private%20Group%20Inquiry" class="btn-primary">Email Me to Start Planning</a>
         </div>
     </section>
 
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="testimonials-header">
-            <h2 class="section-title">Verified Player Logs</h2>
-            
-            <!-- Proficiencies & Rating Banner -->
-            <div class="rating-banner">
-                <div class="stars">★★★★★</div>
-                <p class="rating-text">Flawless 5-Star Rating on StartPlaying</p>
-                <div class="proficiency-tags">
-                    <span class="tag">😊 Inclusive (11)</span>
-                    <span class="tag">✨ Creativity (7)</span>
-                    <span class="tag">🎵 Sets the Mood (5)</span>
-                    <span class="tag">🎓 Teacher (3)</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="reviews-grid">
-            
-            <!-- Review 1 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"Lucy as a Dungeon Master is truly exceptional. She is incredibly patient, always taking the time to listen, clarify rules, and make sure every player feels comfortable. Her DM kit is absolutely fantastic... packed with creative tools, unexpected props, and clever surprises."</p>
-                <p class="author">— Matteo M.</p>
-                <span class="session-count">Played Dragon of Icespire Peak Campaign to completion</span>
-            </div>
-
-            <!-- Review 2 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"I am new to D&D and Lucy has been amazing from the very beginning! From helping me learn how to build my first character and explaining how the character sheet works. I couldn't be happier as a first timer."</p>
-                <p class="author">— Tony</p>
-                <span class="session-count">Played 9 Sessions</span>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"Lucy is a truly good-hearted person. She puts a lot of effort into weaving every character’s backstory into the campaign and gives each player the chance to shine. I’m always happy to go on more adventures with her."</p>
-                <p class="author">— Stormsparx</p>
-                <span class="session-count">Played 7 Sessions</span>
-            </div>
-
-            <!-- Review 4 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"The sheer amount of care she puts into running campaigns, balancing encounters and making sure that the players are having a good experience would put her in my personal top 3 of DMs I've had the pleasure of playing with. Highly recommend!"</p>
-                <p class="author">— Simone A.</p>
-                <span class="session-count">Played 3 one shots</span>
-            </div>
-
-            <!-- Review 5 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"I so far have been having a great time with their campaigns, they are inclusive, supportive, and helpful. It feels like you actually have the freedom to play your character that you want to play while giving everyone their time to shine."</p>
-                <p class="author">— Android</p>
-                <span class="session-count">Played 11 Sessions</span>
-            </div>
-
-            <!-- Review 6 -->
-            <div class="testimonial-card">
-                <div class="stars-small">★★★★★</div>
-                <p class="quote">"I have played with Lucy multiple times. She creates very good stories and is always super-prepared. What I liked the most is the space she gives to character development and players' ideas. She balances battles and role-play very well."</p>
-                <p class="author">— Matteo C.</p>
-                <span class="session-count">Played Dragon of Icespire Peak Campaign to completion and currently in Curse of Strahd</span>
-            </div>
-
-        </div>
+    <!-- 6. De-emphasized Corporate -->
+    <section id="corporate" style="text-align: center; padding: 20px 20px 80px 20px;">
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Looking for Corporate Team Building or B2B Leadership Training? <a href="corporate.html" style="color: var(--accent-primary); font-weight: bold; text-decoration: underline;">View corporate solutions here.</a></p>
     </section>
 
-    <!-- Corporate Solutions Section -->
-    <section id="corporate" class="corporate-section">
-        <div class="corporate-card">
-            <h2 class="corporate-title">Corporate Solutions</h2>
-            <h4 class="corporate-subtitle">Team Building. Leadership Training. Custom B2B Sessions.</h4>
-            <p>Replace the standard trust falls with collaborative problem-solving, strategic resource management, and communication exercises disguised as epic fantasy quests. Tailored specifically for your team's objectives.</p>
-            <!-- Notice this button uses a 'mailto:' link to open their email client -->
-            <a href="mailto:lucymoontabletop@gmail.com" class="btn-primary">Request a Proposal</a>
-        </div>
-    </section>
-
-
-<!-- Timezone Conversion Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const timeElements = document.querySelectorAll('.local-time');
-            
-            timeElements.forEach(el => {
-                const dateString = el.getAttribute('data-time');
-                const formatType = el.getAttribute('data-format'); 
-                const dateObj = new Date(dateString);
-
-                let options = {};
-                
-                if (formatType === 'weekly') {
-                    // Output example: "Tuesday, 1:00 PM EDT"
-                    options = { weekday: 'long', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-                } else {
-                    // Output example: "May 15, 2:00 PM EDT"
-                    options = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-                }
-
-                // Format based on the user's specific browser settings
-                const localTimeString = new Intl.DateTimeFormat(navigator.language, options).format(dateObj);
-                
-                // Replace the hardcoded text with the localized text
-                el.innerText = localTimeString;
-            });
-        });
-    </script>
-</body>
-
-<footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="lucy-logo.png" alt="Lucy Moon Seal">
@@ -293,9 +208,6 @@
     </footer>
 
 <script src="timezone.js"></script>
-</body>
-</html>
-
-
+<script src="scripts.js"></script>
 </body>
 </html>
