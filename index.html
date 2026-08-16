@@ -25,7 +25,6 @@
     </a>
     
     <div class="nav-actions">
-        <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">🌓</button>
         <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
     </div>
 </nav>
@@ -33,6 +32,7 @@
 <!-- Hidden Side Drawer -->
 <div id="nav-drawer" class="nav-drawer">
     <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
+    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -53,7 +53,7 @@
             <div class="hero-text-left">
                 <h1>Grab a Chair.<br>Let's Tell a <span id="typewriter-text" class="typewriter-text"></span><span class="typewriter-cursor">|</span><br>Story.</h1>
                 <p class="subtitle" style="margin-bottom: 10px;">I run immersive D&D 5e campaigns where your character's backstory actually matters.</p>
-                <p class="subtitle" style="font-size: 1rem; opacity: 0.9;">Professional Foundry VTT environments. Zero toxicity.</p>
+                <p class="subtitle" style="font-size: 1rem; opacity: 0.9;">Professional Foundry VTT worlds in inclusive table environments.</p>
             </div>
             <div class="hero-buttons-right">
                 <a href="#campaigns" class="btn-primary">View Open Tables</a>
@@ -89,7 +89,39 @@
         </div>
     </section>
 
-    <!-- 3. Primary CTA: Open Tables -->
+
+    <!-- Meet Your DM Section -->
+    <section id="meet-dm" style="text-align: center; padding: 40px 20px 80px 20px; max-width: 800px; margin: 0 auto;">
+        <img src="lucy-logo.png" alt="Lucy Moon" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent-secondary); margin-bottom: 20px;">
+        <h2 style="font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 15px; font-size: 2.2rem;">Meet Your DM</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 25px;">I run immersive, highly-automated campaigns designed for players who value collaborative storytelling and a toxic-free community.</p>
+        <a href="about.html" class="btn-secondary">Learn More About My Table</a>
+    </section>
+
+
+    <!-- 3. The Promise -->
+    <section class="community-banner">
+        <h2>Find Your Next Friend Group</h2>
+        <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
+        
+        <div class="community-features">
+            <div class="comm-feature">
+                <h4>The Private Tavern</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
+            </div>
+            <div class="comm-feature">
+                <h4>Zero Toxicity</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
+            </div>
+            <div class="comm-feature">
+                <h4>Direct Access</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. Primary CTA: Open Tables -->
     <section id="campaigns" class="campaign-section">
         <div class="policy-header" style="margin-bottom: 30px; border-bottom: none;">
             <h2 class="section-title" style="margin-bottom: 10px;">Current Campaigns</h2>
@@ -114,7 +146,7 @@
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Claim Your Chair</a>
                 </div>
             </div>
 
@@ -128,7 +160,7 @@
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                 <div style="display: flex; gap: 10px; margin-top: 15px;">
                     <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Book Seat</a>
+                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Claim Your Chair</a>
                 </div>
             </div>
             
@@ -148,26 +180,6 @@
         </div>
     </section>
 
-    <!-- 4. The Promise -->
-    <section class="community-banner">
-        <h2>More Than Just a Game</h2>
-        <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
-        
-        <div class="community-features">
-            <div class="comm-feature">
-                <h4>The Private Tavern</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
-            </div>
-            <div class="comm-feature">
-                <h4>Zero Toxicity</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
-            </div>
-            <div class="comm-feature">
-                <h4>Direct Access</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- 5. Private Groups -->
     <section id="private-groups" class="corporate-section">

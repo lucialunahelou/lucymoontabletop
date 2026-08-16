@@ -1,142 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Lucy Moon | Professional DM</title>
+    <title>Lucy Moon | Professional Game Master</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="41b2ca44-fd3a-4be9-8f79-754431b53675"></script>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-            <span class="logo-text">LUCY MOON</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="campaigns.html">Campaigns</a></li>
-            
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="corporate.html">Corporate & B2B</a>
-                    <a href="private-campaigns.html">Private Group Campaigns</a>
-                    <a href="private-events.html">Private Events & Birthdays</a>
-                </div>
-            </li>
-            
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="index.html#campaigns" class="btn-primary-small">Join a Game!</a></li>
-        </ul>
-    </nav>
+<!-- Minimalist Static Header -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
+        <span class="logo-text">LUCY MOON</span>
+    </a>
+    
+    <div class="nav-actions">
+        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    </div>
+</nav>
 
-    <!-- About Hero Section -->
+<!-- Hidden Side Drawer -->
+<div id="nav-drawer" class="nav-drawer">
+    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
+    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="campaigns.html">Campaigns</a></li>
+        <li><a href="private-campaigns.html">Private Campaigns</a></li>
+        <li><a href="corporate.html">Corporate & B2B</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
+    </ul>
+</div>
+
+<!-- Darkening Overlay -->
+<div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <!-- About Hero Section (The Hook) -->
     <header class="about-hero">
         <div class="about-textbox">
             <h1>The Storyteller Behind the Screen</h1>
-            <p>Heyy heyy! Glad to see you here.</p>
-            <p>I've been DMing for 3 years, starting with some friends and then at my local game store where I absorbed the rules like a sponge. My players describe me as <strong>detail-oriented, immersive, and relaxed.</strong></p>
-            <p>I specialize in getting players into the right mindset through deep storytelling, carefully curated music, and atmospheric lighting. To me, the point is telling a fun story together, so go all out with your crazy plans!</p>
+            <p>Hey, I'm Lucy.</p>
+            <p>I run highly immersive, detail-oriented D&D 5e campaigns where your character's backstory actually matters.</p>
+            <p>I didn't start doing this to run a business; I started because I love the chaotic, collaborative magic that happens when a group of people commits to telling a great story together. My tables are built on deep storytelling, curated soundtracks, and atmospheric environments. If you have an insane, borderline-impossible plan and you're hoping the dice roll in your favor? I am your biggest fan.</p>
         </div>
     </header>
 
-    <!-- DM Stat Block (From your SPG Tags) -->
-    <section class="stat-block-section">
-        <div class="stat-container">
-            <div class="stat-category">
-                <h4>Languages</h4>
-                <div class="tag-group">
-                    <span class="tag">English</span>
-                    <span class="tag">Italian</span>
-                    <span class="tag">French</span>
-                    <span class="tag">Arabic</span>
-                </div>
-            </div>
-            <div class="stat-category">
-                <h4>Game Systems</h4>
-                <div class="tag-group">
-                    <span class="tag">D&D 5e</span>
-                    <span class="tag">Alice is Missing</span>
-                    <span class="tag">Fiasco</span>
-                    <span class="tag">Dialect</span>
-                </div>
-            </div>
-            <div class="stat-category">
-                <h4>Table Identity</h4>
-                <div class="tag-group">
-                    <span class="tag">LGBTQ+ Safe Space</span>
-                    <span class="tag">Neurodivergent Friendly</span>
-                    <span class="tag">Beginner Friendly</span>
-                </div>
-            </div>
+    <!-- The Filter (Magnet & Repellent) -->
+    <section class="corporate-section" style="padding-top: 80px; padding-bottom: 40px;">
+        <div class="corporate-card">
+            <h2 class="corporate-title">The Table Culture</h2>
+            <p>My priority is the community. When you join one of my campaigns, you aren't just paying for a weekly three-hour game—you are joining a curated, highly protective ecosystem of people who actually like each other. My players frequently hang out, share memes, and play games together long after the session ends.</p>
+            <p>To protect that environment, I operate a strict, zero-toxicity space. My tables are fundamentally LGBTQ+ safe, neurodivergent-friendly, and highly supportive of beginners. If you are looking to play a lone wolf who steals from the party and causes out-of-character drama, we aren't a good fit. But if you want to collaborate, support your fellow players, and build something unforgettable, pull up a chair.</p>
         </div>
     </section>
 
-    <!-- Detailed GM Philosophy Grid -->
-    <section class="gm-stats-section">
-        <h2 class="section-title">My Table Philosophy</h2>
-        <div class="grid-container">
-            
-            <div class="campaign-card">
-                <div class="card-header">
-                    <h3>Playstyle & Mechanics</h3>
-                </div>
-                <p class="card-details"><strong>Balance:</strong> I love a healthy mix of roleplay and combat, adapting to whatever needs the players have.</p>
-                <p class="card-details"><strong>Rules:</strong> Necessary, but occasionally taken with a grain of salt if breaking them benefits the story or the "Rule of Cool."</p>
-                <p class="card-details"><strong>Min/Maxing:</strong> I advise against it. Balancing encounters for a min/maxed player puts the rest of the party at risk, and keeping things easy makes the game boring.</p>
-            </div>
-
-            <div class="campaign-card">
-                <div class="card-header">
-                    <h3>The Ideal Table</h3>
-                </div>
-                <p class="card-details"><strong>Engagement:</strong> I love players who are engaged in the narrative and provide their own unique take on the world.</p>
-                <p class="card-details"><strong>The Spotlight:</strong> I strive to give everyone a fair shot at the spotlight. Truly cinematic moments happen when players respect each other's moments without trying to hijack them.</p>
-                <p class="card-details"><strong>Creativity:</strong> Have an insane plan and hope the dice roll in your favor? I love it. Succeeding or failing is just part of our unique story.</p>
-            </div>
-            
+    <!-- The Human Element -->
+    <section class="corporate-section" style="padding-top: 0;">
+        <div class="corporate-card" style="border-top-color: var(--accent-secondary);">
+            <h2 class="corporate-title">Offline</h2>
+            <p>When the virtual tabletop shuts down, you can usually find me wandering around Turin with my druid in forever wildshape (aka my dog) Benji.</p>
+            <p>I also spend an unreasonable amount of time getting way too invested in custom mechanical keyboards, mixing substrates for my plant collection, or going to HEMA fencing practice.</p>
         </div>
     </section>
 
-<section class="community-banner">
-            <h2>More Than Just a Game</h2>
-            <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
-            
-            <div class="community-features">
-                <div class="comm-feature">
-                    <h4>The Private Tavern</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
-                </div>
-                <div class="comm-feature">
-                    <h4>Zero Toxicity</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
-                </div>
-                <div class="comm-feature">
-                    <h4>Direct Access</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
-                </div>
-            </div>
-        </section>
-
-    <!-- Call to Action: Next Steps -->
+    <!-- Call to Action -->
     <section class="about-cta-section">
         <div class="cta-container">
             <h2>Looking for Something Specific?</h2>
             <p>Beyond weekly campaigns, I offer fantastic tabletop experiences tailored to your exact needs.</p>
             <div class="cta-buttons">
-                <a href="index.html#corporate" class="btn-primary">Corporate Team Building</a>
                 <a href="mailto:lucymoontabletop@gmail.com?subject=Private%20Event%20Inquiry" class="btn-secondary">Private Events & Birthdays</a>
+                <a href="index.html#corporate" class="btn-primary">Corporate Team Building</a>
             </div>
         </div>
     </section>
 
-<footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="lucy-logo.png" alt="Lucy Moon Seal">
@@ -158,5 +109,6 @@
         </div>
     </footer>
 
+<script src="scripts.js"></script>
 </body>
 </html>

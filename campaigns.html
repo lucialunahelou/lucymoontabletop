@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campaigns | Lucy Moon Tabletop</title>
+    <title>Lucy Moon | Professional Game Master</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="41b2ca44-fd3a-4be9-8f79-754431b53675"></script>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-            <span class="logo-text">LUCY MOON</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="campaigns.html">Campaigns</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="corporate.html">Corporate & B2B</a>
-                    <a href="private-campaigns.html">Private Group Campaigns</a>
-                    <a href="private-events.html">Private Events & Birthdays</a>
-                </div>
-            </li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="campaigns.html" class="btn-primary-small">Join a Game!</a></li>
-        </ul>
-    </nav>
+<!-- Minimalist Static Header -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
+        <span class="logo-text">LUCY MOON</span>
+    </a>
+    
+    <div class="nav-actions">
+        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    </div>
+</nav>
+
+<!-- Hidden Side Drawer -->
+<div id="nav-drawer" class="nav-drawer">
+    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
+    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="campaigns.html">Campaigns</a></li>
+        <li><a href="private-campaigns.html">Private Campaigns</a></li>
+        <li><a href="corporate.html">Corporate & B2B</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
+    </ul>
+</div>
+
+<!-- Darkening Overlay -->
+<div id="drawer-overlay" class="drawer-overlay"></div>
 
     <main style="padding-top: 60px;">
         
@@ -106,7 +120,7 @@
                     </div>
                     <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></p>
                     <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
-                    <p class="card-details"><strong>Seats:</strong> 3/5 Filled</p>
+                    <p class="card-details"><strong>Seats:</strong> 2/4 Filled</p>
                     <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px;">
                         <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Campaign Details</a>
@@ -121,7 +135,7 @@
                     </div>
                     <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-09T16:00:00Z" data-format="weekly">Saturdays, 6:00 PM CEST</span></p>
                     <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
-                    <p class="card-details"><strong>Seats:</strong> 3/5 Filled</p>
+                    <p class="card-details"><strong>Seats:</strong> 4/5 Filled</p>
                     <p class="card-price" data-eur="€16 / session" data-usd="$18 / session" data-aud="A$28 / session">€16 / session</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px;">
                         <a href="doip.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Campaign Details</a>
@@ -129,18 +143,21 @@
                     </div>
                 </div>
 
-                <div class="campaign-card" style="opacity: 0.85;">
+                <!-- Corrected Table Full Card -->
+                <div class="campaign-card">
                     <div class="card-header">
                         <h3>Dragon of Icespire Peak</h3>
-                        <span class="badge" style="background-color: #8B0000; color: white;">Table Full</span>
+                        <!-- Replaced hardcoded hex with theme variable -->
+                        <span class="badge" style="background-color: var(--accent-highlight); color: var(--text-primary);">Table Full</span>
                     </div>
                     <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-10T14:00:00Z" data-format="weekly">Sundays, 4:00 PM CEST</span></p>
                     <p class="card-details"><strong>Duration:</strong> 3 hours (± 15 mins)</p>
-                    <p class="card-details"><strong>Seats:</strong> 6/6 Filled</p>
+                    <p class="card-details"><strong>Seats:</strong> 5/5 Filled</p>
                     <p class="card-price" data-eur="€17 / session" data-usd="$20 / session" data-aud="A$28 / session">€17 / session</p>
                     <div style="display: flex; gap: 10px; margin-top: 15px;">
                         <a href="doip.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Campaign Details</a>
-                        <button class="btn-secondary full-width" style="padding: 10px; cursor: not-allowed; border-color: #ccc; color: #999; background-color: transparent;">Closed</button>
+                        <!-- Waitlist Implementation -->
+                        <button class="btn-secondary full-width open-waitlist" data-campaign="Dragon of Icespire Peak - Sunday" style="padding: 10px; text-align: center;">Join Waitlist</button>
                     </div>
                 </div>
             </div>
@@ -152,20 +169,62 @@
                 <p>Future campaigns currently in the writing and prep phase.</p>
             </div>
             <div class="grid-container" style="justify-content: center; display: flex;">
-                <div class="campaign-card" style="border-color: var(--pale-oak); background-color: var(--ivory); max-width: 500px;">
+                <!-- Corrected background variables for Dark Mode compatibility -->
+                <div class="campaign-card" style="max-width: 500px;">
                     <div class="card-header">
                         <h3>She is the Ancient</h3>
-                        <span class="badge" style="background-color: var(--grey-olive);">In Development</span>
+                        <span class="badge">In Development</span>
                     </div>
                     <p class="card-details" style="font-style: italic; margin-bottom: 15px;">A complete, all-female reimagining of the classic Curse of Strahd campaign. The Countess awaits.</p>
                     <p class="card-details"><strong>Target Launch:</strong> Late 2026</p>
                     <p class="card-details"><strong>Group Dynamic:</strong> Exclusive All-Women's Table</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer"class="btn-secondary full-width" style="margin-top: 20px;">Join the Waitlist!</a>
+                    <!-- Waitlist Implementation -->
+                    <button class="btn-secondary full-width open-waitlist" data-campaign="She is the Ancient" style="margin-top: 20px;">Join the Waitlist!</button>
                 </div>
             </div>
         </section>
 
     </main>
+
+<!-- Waitlist Modal -->
+<div id="waitlist-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" id="close-waitlist-modal">&times;</span>
+        <h3 style="font-family: var(--font-heading); color: var(--accent-primary); margin-bottom: 10px;">Join the Waitlist</h3>
+        <p id="waitlist-campaign-name" style="font-size: 0.9rem; margin-bottom: 20px; font-weight: bold;"></p>
+        
+        <form id="waitlist-form" style="text-align: left; display: flex; flex-direction: column; gap: 15px;">
+            <input type="hidden" id="campaign-id" name="campaign">
+            
+            <div>
+                <label for="player-name" style="font-size: 0.85rem; font-weight: bold;">Name / Alias</label>
+                <input type="text" id="player-name" required style="width: 100%; padding: 10px; border: 1px solid var(--border-subtle); border-radius: 4px; background-color: var(--bg-base); color: var(--text-primary);">
+            </div>
+
+            <div>
+                <label for="player-email" style="font-size: 0.85rem; font-weight: bold;">Email Address (Required for confirmation)</label>
+                <input type="email" id="player-email" required style="width: 100%; padding: 10px; border: 1px solid var(--border-subtle); border-radius: 4px; background-color: var(--bg-base); color: var(--text-primary);">
+            </div>
+
+            <div>
+                <label for="contact-preference" style="font-size: 0.85rem; font-weight: bold;">Preferred Contact Method</label>
+                <select id="contact-preference" required style="width: 100%; padding: 10px; border: 1px solid var(--border-subtle); border-radius: 4px; background-color: var(--bg-base); color: var(--text-primary);">
+                    <option value="Email">Email</option>
+                    <option value="Discord">Discord</option>
+                    <option value="Telegram">Telegram</option>
+                </select>
+            </div>
+
+            <div id="handle-container" style="display: none;">
+                <label for="player-handle" style="font-size: 0.85rem; font-weight: bold;">Platform Handle / Username</label>
+                <input type="text" id="player-handle" placeholder="@username" style="width: 100%; padding: 10px; border: 1px solid var(--border-subtle); border-radius: 4px; background-color: var(--bg-base); color: var(--text-primary);">
+            </div>
+
+            <button type="submit" class="btn-primary" style="margin-top: 10px; width: 100%;">Submit Request</button>
+            <p id="form-status" style="font-size: 0.85rem; text-align: center; margin-top: 10px; display: none;"></p>
+        </form>
+    </div>
+</div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -188,7 +247,8 @@
         </div>
     </footer>
 
+    <!-- Cleaned up duplicate scripts -->
     <script src="timezone.js"></script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>

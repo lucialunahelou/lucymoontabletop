@@ -139,6 +139,27 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
 }
 
+/* Drawer Theme Toggle Styling */
+#theme-toggle {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    border-radius: 0;
+}
+
+#theme-toggle:hover {
+    transform: none; /* Overrides the bouncing scale effect of standard icons */
+    color: var(--text-primary);
+}
+
 .close-btn {
     position: absolute;
     top: 20px;
@@ -1114,8 +1135,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 15px 20px; }
-    .logo { margin-bottom: 15px; }
+    /* Keep the navbar horizontal with space between */
+    .navbar { 
+        flex-direction: row; 
+        padding: 15px 20px; 
+    }
+    
+    .logo { 
+        margin-bottom: 0; 
+    }
+    
+    /* Shrink the logo text slightly so it doesn't crowd the hamburger button on tiny screens */
+    .logo-text {
+        font-size: 1.1rem; 
+    }
     .nav-links { margin-top: 5px; flex-wrap: wrap; justify-content: center; gap: 15px; }
     .cta-buttons { flex-direction: column; }
     .stat-container { flex-direction: column; gap: 40px; }
