@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     padding: 40px 8%;
-    background-image: url('lucy-castle.jpg'); 
+    background-image: url('homepage.jpeg'); 
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -567,10 +567,10 @@ h1, h2, h3, h4, h5, h6 {
 .about-hero {
     min-height: 75vh;
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-start; 
     align-items: center;
     padding: 40px 10%;
-    background-image: url('lucy-columns.jpg'); 
+    background-image: url('about-bg.jpg'); 
     background-size: cover;
     background-position: center;
 }
