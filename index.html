@@ -6,10 +6,15 @@
     <title>Lucy Moon | Professional Game Master</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome for standard UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Primary Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Umami Analytics -->
@@ -17,56 +22,73 @@
 </head>
 <body>
 
-<!-- Minimalist Static Header -->
-<nav class="navbar">
-    <a href="index.html" class="logo">
-        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-        <span class="logo-text">LUCY MOON</span>
-    </a>
-    
-    <div class="nav-actions">
-        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    <!-- RESPONSIVE NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo" onerror="this.src='https://via.placeholder.com/48'">
+            <span class="logo-text">LUCY MOON</span>
+        </a>
+        
+        <div class="nav-links-desktop" style="display: flex; gap: 24px; align-items: center; display: none;">
+            <a href="about.html" style="text-decoration: none; color: var(--accent-primary); font-weight: 700;">About</a>
+            <a href="campaigns.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Campaigns</a>
+            <a href="policies.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Policies</a>
+            <a href="faq.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">FAQ</a>
+            <button id="theme-toggle-desktop" class="nav-icon-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="index.html#campaigns" class="btn-primary-small">Join a Game</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="drawer-btn" class="nav-icon-btn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button id="theme-toggle" class="nav-icon-btn" style="width: 100%; justify-content: flex-start; margin-bottom: 24px; font-size: 1rem;">
+            <i class="fas fa-moon" style="margin-right: 8px;"></i> Toggle Theme
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="index.html#campaigns">Campaigns</a></li>
+            <li><a href="underconstruction.html">Private Groups</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li style="margin-top: 24px;"><a href="index.html#campaigns" class="btn-primary-small full-width">Join a Game!</a></li>
+        </ul>
     </div>
-</nav>
-
-<!-- Hidden Side Drawer -->
-<div id="nav-drawer" class="nav-drawer">
-    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
-    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="campaigns.html">Campaigns</a></li>
-        <li><a href="underconstruction.html">Private Campaigns</a></li>
-        <li><a href="underconstruction.html">Corporate & B2B</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
-    </ul>
-</div>
-
-<!-- Darkening Overlay -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-
-    <!-- 1. The Hook (Hero) -->
+    <!-- 1. HERO SECTION -->
     <header class="hero">
         <div class="hero-content-wide">
             <div class="hero-text-left">
-                <h1>Grab a Chair.<br>Let's Tell a <span id="typewriter-text" class="typewriter-text"></span><span class="typewriter-cursor">|</span><br>Story.</h1>
-                <p class="subtitle" style="margin-bottom: 10px;">I run immersive D&D 5e campaigns where your character's backstory actually matters.</p>
-                <p class="subtitle" style="font-size: 1rem; opacity: 0.9;">Professional Foundry VTT worlds in inclusive table environments.</p>
+                <h1>Grab a Chair.<br>Let's Tell a <span id="typewriter-text" class="typewriter-text">Story</span><span class="typewriter-cursor">|</span></h1>
+                <p class="subtitle" style="margin-bottom: 16px;">I run immersive D&D 5E campaigns where your character's backstory actually matters.</p>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 32px;">Professional Foundry VTT worlds in inclusive, toxic-free environments.</p>
             </div>
             <div class="hero-buttons-right">
-                <a href="#campaigns" class="btn-primary">View Open Tables</a>
-                <a href="#private-groups" class="btn-secondary">Bring Your Own Party</a>
+                <a href="#campaigns" class="btn-primary full-width">View Open Tables</a>
+                <a href="#private-groups" class="btn-secondary full-width">Bring Your Own Party</a>
             </div>
         </div>
     </header>
 
-    <!-- 2. Social Proof -->
-    <section id="testimonials" class="testimonials-section" style="padding: 40px 20px;">
-        <div class="testimonials-header" style="margin-bottom: 30px;">
+    <!-- 2. SOCIAL PROOF & TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-header">
+            <h2 class="section-title" style="margin-bottom: 24px;">Player Reports</h2>
             <div class="proficiency-tags">
-                <span class="tag">★★★★★ Flawless Rating on StartPlaying</span>
+                <span class="tag"><i class="fas fa-star" style="color: var(--accent-secondary);"></i> Flawless Rating on StartPlaying</span>
                 <span class="tag">😊 Inclusive</span>
                 <span class="tag">✨ Creativity</span>
                 <span class="tag">🎵 Sets the Mood</span>
@@ -75,56 +97,59 @@
         
         <div class="reviews-grid">
             <div class="testimonial-card">
+                <div class="stars-small">★★★★★</div>
                 <p class="quote">"Lucy as a Dungeon Master is truly exceptional. She is incredibly patient, always taking the time to listen, clarify rules, and make sure every player feels comfortable."</p>
-                <p class="author">— Matteo M.</p>
+                <span class="author">— Matteo M.</span>
             </div>
             <div class="testimonial-card">
+                <div class="stars-small">★★★★★</div>
                 <p class="quote">"I so far have been having a great time with their campaigns, they are inclusive, supportive, and helpful. It feels like you actually have the freedom to play your character."</p>
-                <p class="author">— Android</p>
+                <span class="author">— Android</span>
             </div>
             <div class="testimonial-card">
+                <div class="stars-small">★★★★★</div>
                 <p class="quote">"The sheer amount of care she puts into running campaigns, balancing encounters and making sure that the players are having a good experience would put her in my personal top 3 of DMs."</p>
-                <p class="author">— Simone A.</p>
+                <span class="author">— Simone A.</span>
             </div>
         </div>
     </section>
 
-
-    <!-- Meet Your DM Section -->
-    <section id="meet-dm" style="text-align: center; padding: 40px 20px 80px 20px; max-width: 800px; margin: 0 auto;">
-        <img src="meet-the-dm.jpg" alt="Lucy Moon" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent-secondary); margin-bottom: 20px;">
-        <h2 style="font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 15px; font-size: 2.2rem;">Meet Your DM</h2>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 25px;">I run immersive, highly-automated campaigns designed for players who value collaborative storytelling and a toxic-free community.</p>
+    <!-- MEET THE DM -->
+    <section id="meet-dm" style="text-align: center; padding: 40px 24px 80px 24px; max-width: 800px; margin: 0 auto;">
+        <img src="meet-the-dm.jpg" alt="Lucy Moon" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent-secondary); margin-bottom: 24px; object-fit: cover;">
+        <h2 style="font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 16px; font-size: 2.5rem;">Meet Your DM</h2>
+        <p style="color: var(--text-secondary); font-size: 1.125rem; margin-bottom: 32px;">I run immersive, highly-automated campaigns designed for players who value collaborative storytelling and a toxic-free community.</p>
         <a href="about.html" class="btn-secondary">Learn More About My Table</a>
     </section>
 
-
-    <!-- 3. The Promise -->
+    <!-- 3. THE PROMISE (Community Banner) -->
     <section class="community-banner">
         <h2>Find Your Next Friend Group</h2>
         <p>When you book a seat at my table, you aren't just joining a campaign—you are joining a highly curated, incredibly welcoming private Discord community. We are a toxic-free, inclusive space dedicated to the joy of collaborative storytelling.</p>
         
         <div class="community-features">
             <div class="comm-feature">
+                <i class="fas fa-dungeon" style="font-size: 2rem; color: var(--accent-secondary); margin-bottom: 16px;"></i>
                 <h4>The Private Tavern</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
+                <p style="font-size: 0.95rem;">Hang out, share memes, and talk lore with players from all my campaigns between sessions.</p>
             </div>
             <div class="comm-feature">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-secondary); margin-bottom: 16px;"></i>
                 <h4>Zero Toxicity</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
+                <p style="font-size: 0.95rem;">I strictly curate this space. No problematic behavior, just kind, sweet people who love TTRPGs.</p>
             </div>
             <div class="comm-feature">
+                <i class="fas fa-comments" style="font-size: 2rem; color: var(--accent-secondary); margin-bottom: 16px;"></i>
                 <h4>Direct Access</h4>
-                <p style="font-size: 0.95rem; margin-bottom: 0;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
+                <p style="font-size: 0.95rem;">Get direct access to me for character building, backstory weaving, and mechanical advice.</p>
             </div>
         </div>
     </section>
 
-
-    <!-- 4. Primary CTA: Open Tables -->
+    <!-- 4. PRIMARY CTA: OPEN TABLES -->
     <section id="campaigns" class="campaign-section">
-        <div class="policy-header" style="margin-bottom: 30px; border-bottom: none;">
-            <h2 class="section-title" style="margin-bottom: 10px;">Current Campaigns</h2>
+        <div class="policy-header" style="margin-bottom: 32px; border-bottom: none;">
+            <h2 class="section-title" style="margin-bottom: 8px;">Current Campaigns</h2>
             <p style="text-align: center; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Join a table of like-minded players</p>
         </div>
 
@@ -135,72 +160,81 @@
             <button class="currency-btn" data-currency="aud">AUD</button>
         </div>
 
-        <div class="grid-container" style="margin-bottom: 50px;">
-            <div class="campaign-card">
+        <div class="grid-container" style="margin-bottom: 64px;">
+            <!-- Tuesday Campaign -->
+            <article class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
                     <span class="badge">Gathering</span>
                 </div>
-                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></p>
-                <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
-                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Claim Your Chair</a>
+                <div class="card-details">
+                    <p><strong>Time:</strong> <span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></p>
+                    <p><strong>Seats:</strong> 0/5 Filled</p>
                 </div>
-            </div>
+                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width">Details</a>
+                    <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" target="_blank" class="btn-primary full-width">Claim Your Chair</a>
+                </div>
+            </article>
 
-            <div class="campaign-card">
+            <!-- Wednesday Campaign -->
+            <article class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
                     <span class="badge">Gathering</span>
                 </div>
-                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></p>
-                <p class="card-details"><strong>Seats:</strong> 0/5 Filled</p>
-                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Claim Your Chair</a>
+                <div class="card-details">
+                    <p><strong>Time:</strong> <span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></p>
+                    <p><strong>Seats:</strong> 0/5 Filled</p>
                 </div>
-            </div>
+                <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width">Details</a>
+                    <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" target="_blank" class="btn-primary full-width">Claim Your Chair</a>
+                </div>
+            </article>
             
-            <div class="campaign-card">
+            <!-- Thursday Campaign -->
+            <article class="campaign-card">
                 <div class="card-header">
                     <h3>Curse of Strahd: Director's Cut</h3>
-                    <span class="badge" style="background-color: var(--accent-primary); color: var(--text-inverse);">Ongoing</span>
+                    <span class="badge" style="background-color: var(--accent-primary);">Ongoing</span>
                 </div>
-                <p class="card-details"><strong>Time:</strong> <span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></p>
-                <p class="card-details"><strong>Seats:</strong> 3/5 Filled</p>
+                <div class="card-details">
+                    <p><strong>Time:</strong> <span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></p>
+                    <p><strong>Seats:</strong> 3/5 Filled</p>
+                </div>
                 <p class="card-price" data-eur="€35 / session" data-usd="$38 / session" data-aud="A$55 / session">€35 / session</p>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <a href="cos-directors-cut.html" class="btn-secondary full-width" style="padding: 10px; text-align: center;">Details</a>
-                    <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" target="_blank" class="btn-primary full-width" style="padding: 10px; text-align: center;">Join on SPG</a>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+                    <a href="cos-directors-cut.html" class="btn-secondary full-width">Details</a>
+                    <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" target="_blank" class="btn-primary full-width">Join on SPG</a>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
-
-    <!-- 5. Private Groups -->
+    <!-- 5. PRIVATE GROUPS -->
     <section id="private-groups" class="corporate-section">
-        <div class="corporate-card" style="border-top-color: var(--accent-secondary);">
+        <div class="corporate-card">
             <h2 class="corporate-title">Bring Your Own Party</h2>
             <h4 class="corporate-subtitle">Pre-formed Groups & Custom Modules</h4>
             <p>Already have a group of friends ready to roll? If you book a full table together, you will automatically get a group discount.</p>
             <p>If the campaigns currently on my schedule aren't exactly what you are looking for, no problem at all! We can pick an official module or setting together. Because I build my virtual tabletops to a highly automated, premium standard, I just ask for 1 to 2 months of prep time to get everything perfect for your Session Zero.</p>
-            <a href="mailto:lucymoontabletop@gmail.com?subject=Private%20Group%20Inquiry" class="btn-primary">Email Me to Start Planning</a>
+            <a href="mailto:lucymoontabletop@gmail.com?subject=Private%20Group%20Inquiry" class="btn-primary" style="margin-top: 16px;">Email Me to Start Planning</a>
         </div>
     </section>
 
-    <!-- 6. De-emphasized Corporate -->
-    <section id="corporate" style="text-align: center; padding: 20px 20px 80px 20px;">
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">Looking for Corporate Team Building or B2B Leadership Training? <a href="corporate.html" style="color: var(--accent-primary); font-weight: bold; text-decoration: underline;">View corporate solutions here.</a></p>
+    <!-- 6. CORPORATE FOOTNOTE -->
+    <section id="corporate" style="text-align: center; padding: 0 24px 80px 24px;">
+        <p style="color: var(--text-secondary); font-size: 0.875rem;">Looking for Corporate Team Building or B2B Leadership Training? <a href="corporate.html" style="color: var(--accent-primary); font-weight: 700; text-decoration: underline;">View corporate solutions here.</a></p>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="lucy-logo.png" alt="Lucy Moon Seal">
+                <img src="lucy-logo.png" alt="Lucy Moon Seal" onerror="this.src='https://via.placeholder.com/48'">
                 <div class="footer-brand-text">
                     <h3>LUCY MOON</h3>
                     <p>Professional Game Master</p>
@@ -209,17 +243,60 @@
             
             <div class="footer-links">
                 <a href="policies.html">Terms & Policies</a>
+                <a href="faq.html">FAQ</a>
                 <a href="mailto:lucymoontabletop@gmail.com">Contact</a>
             </div>
         </div>
         
         <div class="footer-legal">
-            <p>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</p>
-            <p>P.IVA: 13421660013</p>
+            <span>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</span>
+            <span>P.IVA: 13421660013</span>
         </div>
     </footer>
 
-<script src="timezone.js"></script>
-<script src="scripts.js"></script>
+    <!-- INTERACTIVITY & CUSTOM SCRIPTS -->
+    <script src="timezone.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // Drawer Logic
+        const drawerBtn = document.getElementById('drawer-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navDrawer = document.getElementById('nav-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleDrawer() {
+            navDrawer.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        if(drawerBtn) drawerBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // Dark Mode Logic
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            // Icon swap logic for both buttons
+            document.querySelectorAll('#theme-toggle i, #theme-toggle-desktop i').forEach(icon => {
+                if(newTheme === 'dark') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeBtnDesktop = document.getElementById('theme-toggle-desktop');
+        
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if(themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>

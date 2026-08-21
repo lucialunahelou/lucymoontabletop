@@ -1,74 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curse of Strahd: Director's Cut | Lucy Moon Tabletop</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Primary Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="41b2ca44-fd3a-4be9-8f79-754431b53675"></script>
 </head>
 <body>
 
-    
-<!-- Minimalist Static Header -->
-<nav class="navbar">
-    <a href="index.html" class="logo">
-        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-        <span class="logo-text">LUCY MOON</span>
-    </a>
-    
-    <div class="nav-actions">
-        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    <!-- RESPONSIVE NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo" onerror="this.src='https://via.placeholder.com/48'">
+            <span class="logo-text">LUCY MOON</span>
+        </a>
+        
+        <div class="nav-links-desktop" style="display: flex; gap: 24px; align-items: center; display: none;">
+            <a href="about.html" style="text-decoration: none; color: var(--accent-primary); font-weight: 700;">About</a>
+            <a href="campaigns.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Campaigns</a>
+            <a href="policies.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Policies</a>
+            <a href="faq.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">FAQ</a>
+            <button id="theme-toggle-desktop" class="nav-icon-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="index.html#campaigns" class="btn-primary-small">Join a Game</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="drawer-btn" class="nav-icon-btn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button id="theme-toggle" class="nav-icon-btn" style="width: 100%; justify-content: flex-start; margin-bottom: 24px; font-size: 1rem;">
+            <i class="fas fa-moon" style="margin-right: 8px;"></i> Toggle Theme
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="index.html#campaigns">Campaigns</a></li>
+            <li><a href="underconstruction.html">Private Groups</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li style="margin-top: 24px;"><a href="index.html#campaigns" class="btn-primary-small full-width">Join a Game!</a></li>
+        </ul>
     </div>
-</nav>
 
-<!-- Hidden Side Drawer -->
-<div id="nav-drawer" class="nav-drawer">
-    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
-    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="campaigns.html">Campaigns</a></li>
-        <li><a href="underconstruction.html">Private Campaigns</a></li>
-        <li><a href="underconstruction.html">Corporate & B2B</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
-    </ul>
-</div>
-
-<!-- Darkening Overlay -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-
+    <!-- CAMPAIGN DOSSIER -->
     <main class="dossier-container">
         
+        <!-- Hero Image -->
         <div class="dossier-hero-img">
             <img src="cos.png" alt="A sinister portrait of Count Strahd von Zarovich smiling in a dark stone corridor with glowing red mist.">
         </div>
 
-        <div class="dossier-header" style="background-color: #141111; border-bottom: 4px solid #8B0000; border-top: none; border-top-left-radius: 0; border-top-right-radius: 0;">
-            <span class="badge" style="margin-bottom: 15px; display: inline-block; background-color: #8B0000; color: var(--ivory); letter-spacing: 2px;">D&D 5e • Levels 1-10 • Ages 18+</span>
+        <!-- Header -->
+        <div class="dossier-header">
+            <span class="badge" style="margin-bottom: 16px;">D&D 5e • Levels 1-10 • Ages 18+</span>
             
-            <h1 style="color: var(--ivory); letter-spacing: 2px;">CURSE OF STRAHD</h1>
+            <h1>CURSE OF STRAHD</h1>
+            <h2 style="font-size: 1.5rem; color: var(--accent-primary); letter-spacing: 4px; margin-top: 8px;">[ DIRECTOR'S CUT ]</h2>
             
-            <h2 style="font-family: var(--font-body); font-weight: 400; font-size: 1.5rem; letter-spacing: 4px; color: #8B0000; margin-top: 5px;">[ DIRECTOR'S CUT ]</h2>
+            <p class="dossier-quote">"The mists of Barovia do not forgive, and they certainly do not forget."</p>
             
-            <p class="dossier-quote" style="color: #a89f91;">"The mists of Barovia do not forgive, and they certainly do not forget."</p>
-            
-            <div style="margin-top: 30px;">
-                <a href="#" class="btn-primary open-subscribe-modal" style="background-color: #8B0000; color: var(--ivory); border-color: #8B0000;">Book Your Seat</a>
+            <div style="margin-top: 32px;">
+                <button class="btn-primary open-subscribe-modal">Book Your Seat</button>
             </div>
         </div>
 
-        <div class="dossier-specs" style="background-color: rgba(139, 0, 0, 0.03); border-bottom: 1px solid rgba(139, 0, 0, 0.1);">
-            <div class="spec-item" style="color: #141111;"><strong>System:</strong> D&D 5e (2014)</div>
-            <div class="spec-item" style="color: #141111;"><strong>Platform:</strong> Foundry VTT & Discord</div>
-            <div class="spec-item" style="color: #141111;"><strong>Style:</strong> Roleplay Heavy, Mystery, Survival</div>
-            <div class="spec-item" style="color: #141111;"><strong>Themes:</strong> Gothic Horror, High Fantasy</div>
+        <!-- Campaign Specs -->
+        <div class="dossier-specs">
+            <div class="spec-item"><i class="fas fa-dice-d20" style="color: var(--accent-primary); margin-right: 8px;"></i> <strong>System:</strong> D&D 5e (2014)</div>
+            <div class="spec-item"><i class="fas fa-desktop" style="color: var(--accent-primary); margin-right: 8px;"></i> <strong>Platform:</strong> Foundry VTT & Discord</div>
+            <div class="spec-item"><i class="fas fa-theater-masks" style="color: var(--accent-primary); margin-right: 8px;"></i> <strong>Style:</strong> Roleplay Heavy, Mystery, Survival</div>
+            <div class="spec-item"><i class="fas fa-ghost" style="color: var(--accent-primary); margin-right: 8px;"></i> <strong>Themes:</strong> Gothic Horror, High Fantasy</div>
         </div>
 
+        <!-- Main Content -->
         <div class="dossier-content">
             
             <h3>🦇 Hope Dies Here...</h3>
@@ -127,45 +158,51 @@
 
         </div>
 
-        <div class="dossier-cta" style="background-color: rgba(139, 0, 0, 0.04); border-top: 1px solid #8B0000;">
-            <h2 style="color: #141111;">The master of Castle Ravenloft is expecting you.</h2>
-            <p style="color: #8B0000;">Are you ready to face the shadow?</p>
-            <a href="#" class="btn-primary open-subscribe-modal" style="background-color: #141111; color: var(--ivory); border-color: #141111;">Book Your Seat</a>
+        <div class="dossier-cta">
+            <h2>The master of Castle Ravenloft is expecting you.</h2>
+            <p style="color: var(--accent-primary);">Are you ready to face the shadow?</p>
+            <button class="btn-primary open-subscribe-modal" style="margin-top: 16px;">Book Your Seat</button>
         </div>
-
     </main>
 
-<div id="subscribe-modal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-modal" id="close-subscribe-modal">&times;</span>
-        <h3 style="font-family: 'Cinzel', serif; color: var(--forest-green); margin-bottom: 5px;">Select Your Table</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 20px;">Choose the schedule that works best for you:</p>
-        
-        <div class="modal-options">
+    <!-- SUBSCRIPTION MODAL -->
+    <div id="subscribe-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" id="close-subscribe-modal">&times;</span>
+            <h3 style="font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 8px; font-size: 1.5rem;">Select Your Table</h3>
+            <p style="font-size: 1rem; margin-bottom: 24px; color: var(--text-secondary);">Choose the schedule that works best for you:</p>
             
-            <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" class="modal-option-card">
-                <span class="modal-time"><span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></span>
-                <span class="modal-price">€35.00 EUR / week</span>
-            </a>
+            <!-- Mandatory Legal Notice for Automated Stripe Charges -->
+            <div style="background-color: var(--border-subtle); padding: 16px; border-radius: 4px; margin-bottom: 24px; text-align: left; font-size: 0.875rem;">
+                <strong><i class="fas fa-lock" style="color: var(--accent-secondary);"></i> Secure Off-Session Billing</strong><br>
+                Booking securely saves your card. <strong>You will not be charged today.</strong> Your card is automatically charged exactly 1 hour after each session begins. 
+            </div>
 
-            <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" class="modal-option-card">
-                <span class="modal-time"><span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></span>
-                <span class="modal-price">€35.00 EUR / week</span>
-            </a>
+            <div class="modal-options">
+                <!-- Ensure links map to your n8n SetupIntent webhooks -->
+                <a href="https://buy.stripe.com/8x2cN6gCa0gh7b7bAK4F200" class="modal-option-card">
+                    <span class="modal-time"><span class="local-time" data-time="2026-05-12T09:00:00Z" data-format="weekly">Tuesdays, 11:00 AM CEST</span></span>
+                    <span class="modal-price">€35.00 EUR / session</span>
+                </a>
 
-            <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" class="modal-option-card">
-                <span class="modal-time"><span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></span>
-                <span class="modal-price">Hosted via StartPlaying • €35.00 EUR / session</span>
-            </a>
+                <a href="https://buy.stripe.com/4gM14odpY1kl1QNgV44F202" class="modal-option-card">
+                    <span class="modal-time"><span class="local-time" data-time="2026-05-13T18:00:00Z" data-format="weekly">Wednesdays, 8:00 PM CEST</span></span>
+                    <span class="modal-price">€35.00 EUR / session</span>
+                </a>
 
+                <a href="https://startplaying.games/adventure/cmn5p662m00cul104rgiy9ohe?ref=cmi353rqw0089jp04u6ief5r8" class="modal-option-card">
+                    <span class="modal-time"><span class="local-time" data-time="2026-05-14T09:00:00Z" data-format="weekly">Thursdays, 11:00 AM CEST</span></span>
+                    <span class="modal-price">Hosted via StartPlaying • €35.00 EUR / session</span>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="lucy-logo.png" alt="Lucy Moon Seal">
+                <img src="lucy-logo.png" alt="Lucy Moon Seal" onerror="this.src='https://via.placeholder.com/48'">
                 <div class="footer-brand-text">
                     <h3>LUCY MOON</h3>
                     <p>Professional Game Master</p>
@@ -178,12 +215,76 @@
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</p>
-            <p>P.IVA: 13421660013</p>
+            <span>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</span>
+            <span>P.IVA: 13421660013</span>
         </div>
     </footer>
 
     <script src="timezone.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        // Drawer Logic
+        const drawerBtn = document.getElementById('drawer-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navDrawer = document.getElementById('nav-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleDrawer() {
+            navDrawer.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        if(drawerBtn) drawerBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // Dark Mode Logic
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            document.querySelectorAll('#theme-toggle i, #theme-toggle-desktop i').forEach(icon => {
+                if(newTheme === 'dark') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeBtnDesktop = document.getElementById('theme-toggle-desktop');
+        
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if(themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
+
+        // Modal Logic
+        const modal = document.getElementById('subscribe-modal');
+        const openModalBtns = document.querySelectorAll('.open-subscribe-modal');
+        const closeModalBtn = document.getElementById('close-subscribe-modal');
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+        });
+
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

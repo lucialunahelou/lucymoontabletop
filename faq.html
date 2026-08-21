@@ -1,47 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | Lucy Moon Tabletop</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Primary Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="41b2ca44-fd3a-4be9-8f79-754431b53675"></script>
 </head>
-<body>
+<body class="pattern-page">
 
-    
-<!-- Minimalist Static Header -->
-<nav class="navbar">
-    <a href="index.html" class="logo">
-        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-        <span class="logo-text">LUCY MOON</span>
-    </a>
-    
-    <div class="nav-actions">
-        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    <!-- RESPONSIVE NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo" onerror="this.src='https://via.placeholder.com/48'">
+            <span class="logo-text">LUCY MOON</span>
+        </a>
+        
+        <div class="nav-links-desktop" style="display: flex; gap: 24px; align-items: center; display: none;">
+            <a href="about.html" style="text-decoration: none; color: var(--accent-primary); font-weight: 700;">About</a>
+            <a href="campaigns.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Campaigns</a>
+            <a href="policies.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Policies</a>
+            <a href="faq.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">FAQ</a>
+            <button id="theme-toggle-desktop" class="nav-icon-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="index.html#campaigns" class="btn-primary-small">Join a Game</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="drawer-btn" class="nav-icon-btn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button id="theme-toggle" class="nav-icon-btn" style="width: 100%; justify-content: flex-start; margin-bottom: 24px; font-size: 1rem;">
+            <i class="fas fa-moon" style="margin-right: 8px;"></i> Toggle Theme
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="index.html#campaigns">Campaigns</a></li>
+            <li><a href="underconstruction.html">Private Groups</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li style="margin-top: 24px;"><a href="index.html#campaigns" class="btn-primary-small full-width">Join a Game!</a></li>
+        </ul>
     </div>
-</nav>
 
-<!-- Hidden Side Drawer -->
-<div id="nav-drawer" class="nav-drawer">
-    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
-    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="campaigns.html">Campaigns</a></li>
-        <li><a href="underconstruction.html">Private Campaigns</a></li>
-        <li><a href="underconstruction.html">Corporate & B2B</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
-    </ul>
-</div>
-
-<!-- Darkening Overlay -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-
+    <!-- MAIN FAQ CONTAINER -->
     <main class="faq-container">
         <div class="policy-header">
             <h1>Frequently Asked Questions</h1>
@@ -50,17 +78,18 @@
 
         <div class="faq-grid">
             
+            <!-- CATEGORY 1: GAMEPLAY & EXPERIENCE -->
             <div class="faq-category">
-                <h2>Gameplay & Experience</h2>
+                <h2 style="font-family: var(--font-heading); color: var(--text-primary); border-bottom: 2px solid var(--accent-secondary); padding-bottom: 8px; margin-bottom: 24px;">Gameplay & Experience</h2>
 
                 <div class="faq-item">
                     <h3>I have never played D&D before. Can I still join?</h3>
                     <p>Absolutely! I love teaching new players. You don't need to memorize any rulebooks. I provide full onboarding, help you build your first character, and gently guide you through the mechanics as we play.</p>
                 </div>
 
-                <div class="faq-item">
-                    <h3>What tools do we use to play online?</h3>
-                    <p>We use Discord for voice and community, and <strong>Foundry VTT hosted on The Forge</strong> for our virtual tabletop. I have heavily customized my Foundry setup with premium modules for full automation, dynamic lighting, and seamless combat tracking to provide the smoothest, most professional experience possible.</p>
+               <div class="faq-item">
+                    <h3>What tools do we use to play online?<!--[cite: 7] --></h3>
+                    <p>We use Discord for voice and community, and <strong>Foundry VTT hosted on The Forge</strong> for our virtual tabletop.<!--[cite: 7] --> I have heavily customized my Foundry setup with premium modules for full automation, dynamic lighting, and seamless combat tracking to provide the smoothest, most professional experience possible.<!--[cite: 7] --></p>
                 </div>
 
                 <div class="faq-item">
@@ -72,34 +101,35 @@
                     <h3>Where do you run your games? (Online vs In-Person)</h3>
                     <p>My weekly public campaigns are run entirely <strong>online</strong>. However, for Corporate Team Building and Private Events, I am available to travel <strong>in-person</strong> across Northern Italy (Piedmont, Liguria, Lombardy), France, and select European locations (travel and accommodation must be covered by the client).</p>
                 </div>
-
             </div>
 
+            <!-- CATEGORY 2: LOGISTICS & BOOKING -->
             <div class="faq-category">
-                <h2>Logistics & Booking</h2>
+                <h2 style="font-family: var(--font-heading); color: var(--text-primary); border-bottom: 2px solid var(--accent-secondary); padding-bottom: 8px; margin-bottom: 24px;">Logistics & Booking</h2>
 
                 <div class="faq-item">
                     <h3>Do I need to buy books, assets, or premium accounts?</h3>
-                    <p>No! My games are entirely all-inclusive. Once you pay for your seat, there are zero hidden fees. I provide access to all the necessary rulebooks, premium character creation tools, custom tokens, and maps. You just need a free Discord account and a web browser.</p>
+                    <p>No! My games are entirely all-inclusive. Once you pay for your seat, there are zero hidden fees. I provide access to all the necessary rulebooks, premium character creation tools, custom tokens, and maps. You just need a free Discord account and a hardware-accelerated web browser (tablets and iPads are not supported).</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>How do payments work for weekly campaigns?</h3>
-                    <p>Your seat is secured via a weekly subscription handled entirely by <strong>Stripe</strong>. I do not store or see your credit card data. Through Stripe's secure player portal, you can easily update your payment method or cancel your subscription at any time.</p>
+                    <p>When you book a seat, <strong>Stripe</strong> securely saves your payment method, but you are not charged immediately. Your card is automatically billed exactly 1 hour after your scheduled session begins. I do not store or see your credit card data.</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>What happens if I have to miss a session?</h3>
-                    <p>Life happens! If you give me at least 24 hours' notice, your subscription for that week will be credited to the next session. Cancellations with less than 24 hours' notice are charged as normal to protect my prep time and the table's schedule. You can read the full breakdown on my <a href="policies.html" style="color: var(--forest-green); font-weight: bold;">Terms & Policies</a> page.</p>
+                    <p>Life happens! If you give me at least 24 hours' notice, the automated charge for that session will be canceled, and you will not be billed. Cancellations with less than 24 hours' notice are charged as normal to protect my prep time and the table's schedule. You can read the full breakdown on my <a href="policies.html" style="color: var(--accent-primary); font-weight: bold;">Terms & Policies</a> page.</p>
                 </div>
             </div>
 
+            <!-- CATEGORY 3: CORPORATE & PRIVATE EVENTS -->
             <div class="faq-category">
-                <h2>Corporate & Private Events</h2>
+                <h2 style="font-family: var(--font-heading); color: var(--text-primary); border-bottom: 2px solid var(--accent-secondary); padding-bottom: 8px; margin-bottom: 24px;">Corporate & Private Events</h2>
 
                 <div class="faq-item">
                     <h3>My friends and I want to hire you for a private campaign. Can we pick the module?</h3>
-                    <p>Yes! If you are booking a private group, you can request any module you like. Because I extensively prep my games, I typically require about one month's notice to read, learn, and build the module in Foundry. Payment is required upfront to secure your spot on my calendar and trigger the prep phase.</p>
+                    <p>Yes! If you are booking a private group, you can request any module you like. Because I extensively prep my games, I typically require about one to two months' notice to read, learn, and build the module in Foundry. Payment is required upfront to secure your spot on my calendar and trigger the prep phase.</p>
                 </div>
 
                 <div class="faq-item">
@@ -116,10 +146,11 @@
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="lucy-logo.png" alt="Lucy Moon Seal">
+                <img src="lucy-logo.png" alt="Lucy Moon Seal" onerror="this.src='https://via.placeholder.com/48'">
                 <div class="footer-brand-text">
                     <h3>LUCY MOON</h3>
                     <p>Professional Game Master</p>
@@ -138,5 +169,45 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // Drawer Logic
+        const drawerBtn = document.getElementById('drawer-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navDrawer = document.getElementById('nav-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleDrawer() {
+            navDrawer.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        if(drawerBtn) drawerBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // Dark Mode Logic
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            document.querySelectorAll('#theme-toggle i, #theme-toggle-desktop i').forEach(icon => {
+                if(newTheme === 'dark') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeBtnDesktop = document.getElementById('theme-toggle-desktop');
+        
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if(themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>

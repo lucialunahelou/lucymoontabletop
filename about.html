@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucy Moon | Professional Game Master</title>
+    <title>About Lucy Moon | Professional Game Master</title>
     <link rel="icon" type="image/png" href="lucy-favicon.png">
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Primary Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Umami Analytics -->
@@ -17,37 +22,54 @@
 </head>
 <body>
 
-<!-- Minimalist Static Header -->
-<nav class="navbar">
-    <a href="index.html" class="logo">
-        <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo">
-        <span class="logo-text">LUCY MOON</span>
-    </a>
-    
-    <div class="nav-actions">
-        <button id="drawer-open" class="nav-icon-btn" aria-label="Open Menu">☰</button>
+    <!-- RESPONSIVE NAVIGATION BAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="lucy-logo.png" alt="Lucy Moon Professional Game Master Logo" onerror="this.src='https://via.placeholder.com/48'">
+            <span class="logo-text">LUCY MOON</span>
+        </a>
+        
+        <div class="nav-links-desktop" style="display: flex; gap: 24px; align-items: center; display: none;">
+            <a href="about.html" style="text-decoration: none; color: var(--accent-primary); font-weight: 700;">About</a>
+            <a href="campaigns.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Campaigns</a>
+            <a href="policies.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Policies</a>
+            <a href="faq.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">FAQ</a>
+            <button id="theme-toggle-desktop" class="nav-icon-btn" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="index.html#campaigns" class="btn-primary-small">Join a Game</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="drawer-btn" class="nav-icon-btn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="nav-drawer" id="nav-drawer">
+        <button class="close-btn" id="close-btn" aria-label="Close Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button id="theme-toggle" class="nav-icon-btn" style="width: 100%; justify-content: flex-start; margin-bottom: 24px; font-size: 1rem;">
+            <i class="fas fa-moon" style="margin-right: 8px;"></i> Toggle Theme
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="campaigns.html">Campaigns</a></li>
+            <li><a href="index.html#campaigns">Campaigns</a></li>
+            <li><a href="underconstruction.html">Private Groups</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li style="margin-top: 24px;"><a href="index.html#campaigns" class="btn-primary-small full-width">Join a Game!</a></li>
+        </ul>
     </div>
-</nav>
 
-<!-- Hidden Side Drawer -->
-<div id="nav-drawer" class="nav-drawer">
-    <button id="drawer-close" class="nav-icon-btn close-btn" aria-label="Close Menu">✕</button>
-    <button id="theme-toggle" class="nav-icon-btn" aria-label="Toggle Theme">Dark mode 🌓 Light mode</button>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="campaigns.html">Campaigns</a></li>
-        <li><a href="underconstruction.html">Private Campaigns</a></li>
-        <li><a href="underconstruction.html">Corporate & B2B</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li style="margin-top: 20px;"><a href="campaigns.html" class="btn-primary-small full-width">Join a Game!</a></li>
-    </ul>
-</div>
-
-<!-- Darkening Overlay -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-
-    <!-- About Hero Section (The Hook) -->
+    <!-- 1. HERO SECTION -->
     <header class="about-hero">
         <div class="about-textbox">
             <h1>The Storyteller Behind the Screen</h1>
@@ -57,7 +79,40 @@
         </div>
     </header>
 
-    <!-- The Filter (Magnet & Repellent) -->
+    <!-- 2. SCANMABLE STAT BLOCK -->
+    <section class="stat-block-section">
+        <div class="stat-container">
+            <div class="stat-category">
+                <h4>Primary Systems</h4>
+                <div class="tag-group">
+                    <span class="tag">D&D 5E</span>
+                    <span class="tag">Deep Storytelling</span>
+                    <span class="tag">Atmospheric Environments</span>
+                    <span class="tag">Character-Driven</span>
+                </div>
+            </div>
+            <div class="stat-category">
+                <h4>Table Culture</h4>
+                <div class="tag-group">
+                    <span class="tag">Zero-Toxicity</span>
+                    <span class="tag">LGBTQ+ Safe</span>
+                    <span class="tag">Neurodivergent-Friendly</span>
+                    <span class="tag">Beginner-Supportive</span>
+                </div>
+            </div>
+            <div class="stat-category">
+                <h4>Offline</h4>
+                <div class="tag-group">
+                    <span class="tag">Turin, Italy</span>
+                    <span class="tag">Custom Keyboards</span>
+                    <span class="tag">Houseplants</span>
+                    <span class="tag">HEMA Fencing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. THE TABLE CULTURE (Magnet & Repellent) -->
     <section class="corporate-section" style="padding-top: 80px; padding-bottom: 40px;">
         <div class="corporate-card">
             <h2 class="corporate-title">The Table Culture</h2>
@@ -66,18 +121,28 @@
         </div>
     </section>
 
-    <!-- The Human Element -->
+    <!-- 4. THE HUMAN ELEMENT -->
     <section class="corporate-section" style="padding-top: 0;">
         <div class="corporate-card" style="border-top-color: var(--accent-secondary);">
             <h2 class="corporate-title">Offline</h2>
-
-            <img src="lucyandben.jpg" alt="Lucy and her dog Benji" style="width: 100%; max-width: 400px; border-radius: 8px; margin-bottom: 25px; border: 2px solid var(--accent-secondary); box-shadow: 0 4px 15px var(--shadow-color);">
+            <img src="lucyandben.jpg" alt="Lucy and her dog Benji" style="width: 100%; max-width: 400px; border-radius: 8px; margin-bottom: 32px; border: 2px solid var(--border-subtle); box-shadow: 0 8px 24px var(--shadow-color); object-fit: cover;">
             <p>When the virtual tabletop shuts down, you can usually find me wandering around Turin with my druid in forever wildshape (aka my dog) Benji.</p>
             <p>I also spend an unreasonable amount of time getting way too invested in custom mechanical keyboards, mixing substrates for my plant collection, or going to HEMA fencing practice.</p>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- NEW SECTION: TECHNICAL INFRASTRUCTURE -->
+    <section class="corporate-section" style="padding-top: 0; padding-bottom: 40px;">
+        <div class="corporate-card">
+            <h2 class="corporate-title">Technical Infrastructure</h2>
+            <p>Professional campaigns require professional stability. My digital tables are hosted on The Forge, a dedicated premium server environment specifically optimized for Foundry VTT. This ensures high uptime and isolates our game instances from standard local network outages.</p>
+            
+            <h3 style="font-family: var(--font-body); font-size: 1.25rem; margin-top: 24px; margin-bottom: 8px; color: var(--text-primary);">Foundry VTT Integration</h3>
+            <p>Sessions run exclusively on Foundry VTT. I heavily modify the platform with extensive community modules to automate tactical combat calculations, manage line-of-sight dynamic lighting, and trigger environmental audio cues seamlessly.</p>
+        </div>
+    </section>
+
+    <!-- 5. CALL TO ACTION -->
     <section class="about-cta-section">
         <div class="cta-container">
             <h2>Looking for Something Specific?</h2>
@@ -89,10 +154,11 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="lucy-logo.png" alt="Lucy Moon Seal">
+                <img src="lucy-logo.png" alt="Lucy Moon Seal" onerror="this.src='https://via.placeholder.com/48'">
                 <div class="footer-brand-text">
                     <h3>LUCY MOON</h3>
                     <p>Professional Game Master</p>
@@ -101,16 +167,58 @@
             
             <div class="footer-links">
                 <a href="policies.html">Terms & Policies</a>
+                <a href="faq.html">FAQ</a>
                 <a href="mailto:lucymoontabletop@gmail.com">Contact</a>
             </div>
         </div>
         
         <div class="footer-legal">
-            <p>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</p>
-            <p>P.IVA: 13421660013</p>
+            <span>&copy; 2026 Lucy Moon Tabletop. All rights reserved.</span>
+            <span>P.IVA: 13421660013</span>
         </div>
     </footer>
 
-<script src="scripts.js"></script>
+    <!-- INTERACTIVITY & CUSTOM SCRIPTS -->
+    <script src="scripts.js"></script>
+    <script>
+        // Drawer Logic
+        const drawerBtn = document.getElementById('drawer-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const navDrawer = document.getElementById('nav-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleDrawer() {
+            navDrawer.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+        }
+
+        if(drawerBtn) drawerBtn.addEventListener('click', toggleDrawer);
+        if(closeBtn) closeBtn.addEventListener('click', toggleDrawer);
+        if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+        // Dark Mode Logic
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            document.querySelectorAll('#theme-toggle i, #theme-toggle-desktop i').forEach(icon => {
+                if(newTheme === 'dark') {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeBtnDesktop = document.getElementById('theme-toggle-desktop');
+        
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        if(themeBtnDesktop) themeBtnDesktop.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>
